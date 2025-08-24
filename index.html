@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamad F. Alotaibi - Strategic Innovation Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Characters Section */
+        .characters {
+            background: #f8f9fa;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .character-info {
+            padding: 1.5rem;
+        }
+
+        .character-name {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .character-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Vision Section */
+        .vision {
+            background: #f8f9fa;
+        }
+
+        .vision-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pillar-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .pillar-title {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pillar-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Copyright */
+        .copyright {
+            background: #1e40af;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .characters-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Cohesion Holdings</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hamad F. Alotaibi</h1>
+                <p class="subtitle">Strategic Innovation Architect</p>
+                <p class="tagline">One individual. Multiple breakthrough concepts. Proven execution capability.</p>
+                <a href="#about" class="cta-button">Discover My Vision</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years of Development</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Virtual Portals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Original Characters</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Self-Developed</div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <p>As a Strategic Innovation Architect, I have dedicated the past two years to creating a comprehensive digital ecosystem that serves the youth of the GCC region. Every concept, character, and strategic framework has been developed independently, driven by a genuine commitment to empowering others through technology and education.</p>
+                
+                <p>My work represents the intersection of cultural authenticity, technological innovation, and educational excellence. From character creation to platform architecture, each element is designed to honor our heritage while preparing our youth for the future.</p>
+                
+                <p>This portfolio showcases not just projects, but a vision for how digital platforms can accelerate national transformation, create economic opportunities, and preserve cultural values in an increasingly connected world.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section id="characters" class="section characters">
+        <div class="container">
+            <h2 class="section-title">Character Universe</h2>
+            <p class="section-subtitle">Meet the guardians and ambassadors of THEE OASIS virtual platform, representing the unity and diversity of the GCC region.</p>
+            
+            <div class="characters-grid">
+                <div class="character-card">
+                    <img src="assets/images/IMG_0779.png" alt="Adnan" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-info">
+                        <h3 class="character-name">Adnan</h3>
+                        <p class="character-role">Environmental Guardian (Kuwait)</p>
+                        <p class="character-description">Dedicated to sustainability and environmental protection, Adnan leads initiatives for clean energy solutions and wildlife conservation across the virtual platform.</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="assets/images/IMG_0780.png" alt="Noura" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-info">
+                        <h3 class="character-name">Noura</h3>
+                        <p class="character-role">Sustainability Advocate (Kuwait)</p>
+                        <p class="character-description">Noura's passion for environmental stewardship drives her mission to educate users about sustainable living and renewable energy solutions.</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="assets/images/IMG_0781.png" alt="Faris" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-info">
+                        <h3 class="character-name">Faris</h3>
+                        <p class="character-role">Clean Energy Knight (Saudi Arabia)</p>
+                        <p class="character-description">As the guardian of green technology, Faris champions Saudi Arabia's renewable energy initiatives and environmental protection efforts.</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <img src="assets/images/IMG_0782.jpeg" alt="Jude" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-info">
+                        <h3 class="character-name">Jude</h3>
+                        <p class="character-role">Digital Tourism Ambassador (Saudi Arabia)</p>
+                        <p class="character-description">Embodying Saudi hospitality, Jude welcomes visitors to explore the Kingdom's rich culture and heritage through innovative digital tourism experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Innovative concepts that blend entertainment, education, and cultural preservation to create meaningful digital experiences.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="assets/images/PAandTCEG.png" alt="Princess Aliyah and the Cutting Edge of Glory" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-info">
+                        <h3 class="project-title">Princess Aliyah and the Cutting Edge of Glory</h3>
+                        <p class="project-description">An epic four-season series featuring Princess Aliyah, her AI companion Mia, and the legendary bionic horse Obaya. This culturally-authentic narrative celebrates Saudi heritage while exploring themes of innovation, courage, and unity.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="assets/images/thegcc.png" alt="The GCC Blockchain Quest" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-info">
+                        <h3 class="project-title">The GCC Blockchain Quest</h3>
+                        <p class="project-description">A collaborative gaming experience where players from each GCC country work together to build secure blockchain networks, promoting cooperation, strategic thinking, and technological literacy across the region.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <img src="assets/images/IMG_0783.png" alt="THEE OASIS Virtual Platform" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-info">
+                        <h3 class="project-title">THEE OASIS Virtual Platform</h3>
+                        <p class="project-description">A comprehensive digital ecosystem featuring 13 specialized portals, creator economy tools, educational gaming, and cultural preservation initiatives designed to empower GCC youth and preserve regional heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="section vision">
+        <div class="container">
+            <h2 class="section-title">Strategic Vision</h2>
+            <div class="vision-content">
+                <p class="vision-text">My vision extends beyond individual projects to encompass a comprehensive digital transformation that serves national objectives while empowering youth across the GCC region. Through culturally-authentic content, innovative technology, and strategic partnerships, we can create platforms that preserve our heritage, accelerate economic diversification, and position our region as a global leader in digital innovation.</p>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <h3 class="pillar-title">Emotional Intelligence</h3>
+                        <p class="pillar-description">Character-driven narratives that develop empathy, cultural understanding, and social skills through meaningful interactions.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3 class="pillar-title">Financial Literacy</h3>
+                        <p class="pillar-description">Creator economy tools and virtual investment systems that teach economic principles and entrepreneurship from a young age.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3 class="pillar-title">Technology Literacy</h3>
+                        <p class="pillar-description">AI collaboration tools and digital creation platforms that prepare youth for the future economy through hands-on technological experience.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3 class="pillar-title">Cultural Intelligence</h3>
+                        <p class="pillar-description">Heritage preservation and GCC unity initiatives that celebrate our identity while fostering regional cooperation and global understanding.</p>
+                    </div>
+                </div>
+                
+                <p class="vision-text">This is not just about building games or platforms—it's about creating the digital infrastructure that will define the next generation of GCC cultural and economic influence globally. Every character, every feature, every strategic decision is designed to serve this greater purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Ready for Strategic Partnership</h2>
+            <p class="contact-info">Prepared for immediate collaboration with complete operational readiness: legal framework, secure infrastructure, and flexible engagement models.</p>
+            
+            <div class="contact-details">
+                <p><strong>Hamad F. Alotaibi</strong></p>
+                <p>Strategic Innovation Architect</p>
+                <p>WhatsApp/Phone: +965 5117 9990</p>
+                <p>Preferred Contact: WhatsApp chat or direct call</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright -->
+    <footer class="copyright">
+        <div class="container">
+            <p>&copy; 2025 Cohesion Holdings. All rights reserved. Confidential & Proprietary.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
