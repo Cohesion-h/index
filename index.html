@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohesion Holdings - Digital Infrastructure for Vision 2030</title>
+    <title>Hamad F. Alotaibi - Strategic Innovation Architect</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -19,9 +19,10 @@
         .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px; transition: background-color 0.3s; }
         .nav-links a:hover { background-color: rgba(255,255,255,0.1); }
         .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 140px 0 80px; text-align: center; min-height: 80vh; display: flex; align-items: center; }
+        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 140px 0 80px; text-align: center; min-height: 100vh; display: flex; align-items: center; }
         .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
-        .hero-content .subtitle { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-content .subtitle { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;}
+        .hero-content .tagline { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; font-style: italic; }
         .cta-button { display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3); }
         .cta-button:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
         .section { padding: 80px 0; }
@@ -29,6 +30,8 @@
         .section-subtitle { text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
         .about { background: white; }
         .about-text { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 900px; margin: 0 auto; text-align: center; }
+        .about-text p { margin-bottom: 1.5rem; }
+        .value-prop { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; }
         .characters { background: #f8f9fa; }
         .characters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
         .character-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
@@ -36,14 +39,12 @@
         .character-info { padding: 1.5rem; }
         .character-name { font-size: 1.5rem; color: #1e3a8a; margin-bottom: 0.5rem; }
         .character-role { color: #3b82f6; font-weight: 600; margin-bottom: 1rem; }
-        .character-description { color: #666; line-height: 1.6; }
         .projects { background: white; }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
         .project-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .project-image { width: 100%; height: 200px; object-fit: cover; }
         .project-info { padding: 1.5rem; }
         .project-title { font-size: 1.3rem; color: #1e3a8a; margin-bottom: 1rem; }
-        .project-description { color: #666; line-height: 1.6; }
         .vision { background: #f8f9fa; }
         .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
         .pillar-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
@@ -64,9 +65,9 @@
             <div class="logo" data-en="Cohesion Holdings" data-ar="كوهيجن القابضة">Cohesion Holdings</div>
             <ul class="nav-links">
                 <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="#about" data-en="Our Value Proposition" data-ar="قيمتنا المقترحة">Our Value Proposition</a></li>
-                <li><a href="#vision" data-en="The Digital Ecosystem" data-ar="النظام البيئي الرقمي">The Digital Ecosystem</a></li>
-                <li><a href="#projects" data-en="Flagship Projects" data-ar="المشاريع الرئيسية">Flagship Projects</a></li>
+                <li><a href="#about" data-en="The Vision" data-ar="الرؤية">The Vision</a></li>
+                <li><a href="#vision" data-en="The Ecosystem" data-ar="النظام البيئي">The Ecosystem</a></li>
+                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
                 <li><a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a></li>
             </ul>
             <button id="lang-toggle" class="lang-toggle">العربية</button>
@@ -77,9 +78,10 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 data-en="Architecting the Digital Infrastructure for Vision 2030" data-ar="بناء البنية التحتية الرقمية لتسريع رؤية 2030">Architecting the Digital Infrastructure for Vision 2030</h1>
-                <p class="subtitle" data-en="A multi-layered virtual ecosystem designed to empower youth, accelerate the economy, and serve as a multidimensional extension for the Kingdom's strategic initiatives." data-ar="نظام بيئي افتراضي متعدد الأبعاد، مصمم لتمكين الشباب، وتسريع الاقتصاد، والعمل كامتداد متعدد الأبعاد للمبادرات الاستراتيجية للمملكة.">A multi-layered virtual ecosystem designed to empower youth, accelerate the economy, and serve as a multidimensional extension for the Kingdom's strategic initiatives.</p>
-                <a href="#about" class="cta-button" data-en="Discover Our Vision" data-ar="اكتشف رؤيتنا">Discover Our Vision</a>
+                <h1 data-en="A Strategic Partnership Proposal to Accelerate Vision 2030" data-ar="مقترح شراكة استراتيجية لتسريع رؤية 2030">A Strategic Partnership Proposal to Accelerate Vision 2030</h1>
+                <p class="subtitle" data-en="From the architect of THEE OASIS: A turnkey digital ecosystem designed to synergize PIF investments, activate the NEOM Media Village, and amplify MISK's mission." data-ar="من مهندس مشروع الواحة: نظام بيئي رقمي متكامل، مصمم لتوحيد استثمارات صندوق الاستثمارات العامة، وتفعيل قرية الإعلام في نيوم، ومضاعفة أثر رسالة مؤسسة مسك.">From the architect of THEE OASIS: A turnkey digital ecosystem designed to synergize PIF investments, activate the NEOM Media Village, and amplify MISK's mission.</p>
+                <p class="tagline" data-en="This is the missing piece." data-ar="هذه هي القطعة المفقودة.">This is the missing piece.</p>
+                <a href="#about" class="cta-button" data-en="Discover the Blueprint" data-ar="اكتشف المخطط">Discover the Blueprint</a>
             </div>
         </div>
     </section>
@@ -87,9 +89,13 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title" data-en="The Strategic Partner for National Acceleration" data-ar="الشريك الاستراتيجي للتسريع الوطني">The Strategic Partner for National Acceleration</h2>
+            <h2 class="section-title" data-en="The Architect & The Vision" data-ar="المهندس والرؤية">The Architect & The Vision</h2>
             <div class="about-text">
-                <p data-en="We are not just building a platform, we are delivering a turnkey strategic solution. Our mission is to activate key national assets like the NEOM Media Village and serve as a powerful extension of the incredible work already established by MISK, PIF, and Savvy Games Group. We provide the missing piece: a culturally authentic, globally appealing digital ecosystem that engages youth, creates jobs, and drives tangible economic returns." data-ar="نحن لا نبني مجرد منصة، بل نقدم حلاً استراتيجياً متكاملاً. مهمتنا هي تفعيل الأصول الوطنية الرئيسية مثل قرية الإعلام في نيوم، وأن نكون امتداداً قوياً للعمل المتميز الذي أسسته بالفعل مؤسسة مسك وصندوق الاستثمارات العامة ومجموعة Savvy Games. نحن نقدم القطعة المفقودة: نظام بيئي رقمي أصيل ثقافياً وجذاب عالمياً، يشرك الشباب، ويصنع الوظائف، ويحقق عوائد اقتصادية ملموسة.">We are not just building a platform, we are delivering a turnkey strategic solution. Our mission is to activate key national assets like the NEOM Media Village and serve as a powerful extension of the incredible work already established by MISK, PIF, and Savvy Games Group. We provide the missing piece: a culturally authentic, globally appealing digital ecosystem that engages youth, creates jobs, and drives tangible economic returns.</p>
+                <h3 data-en="Hamad F. Alotaibi, Strategic Innovation Architect" data-ar="حمد ف. العتيبي، مهندس الابتكار الاستراتيجي" style="color: #1e3a8a; font-size: 1.8rem; margin-bottom: 1rem;">Hamad F. Alotaibi, Strategic Innovation Architect</h3>
+                <p data-en="For the past two years, I have independently architected 'THEE OASIS,' a comprehensive digital nation. This is not a concept; it is a fully developed blueprint integrating AI, gaming, a creator economy, and digital twin technology. My work is a demonstration of relentless execution, driven by a mission to empower the youth of the GCC." data-ar="على مدى العامين الماضيين، قمت بشكل مستقل بتصميم 'الواحة' (THEE OASIS)، وهي أمة رقمية شاملة. هذا ليس مجرد مفهوم، بل هو مخطط متكامل يدمج الذكاء الاصطناعي، والألعاب، واقتصاد المبدعين، وتقنية التوأم الرقمي. عملي هو برهان على التنفيذ الدؤوب، مدفوعًا برسالة تمكين شباب دول مجلس التعاون الخليجي.">For the past two years, I have independently architected 'THEE OASIS,' a comprehensive digital nation. This is not a concept; it is a fully developed blueprint integrating AI, gaming, a creator economy, and digital twin technology. My work is a demonstration of relentless execution, driven by a mission to empower the youth of the GCC.</p>
+                <div class="value-prop">
+                    <p data-en="I am presenting a strategic partnership that works both ways. Cohesion Holdings, as the IP owner, will license this ecosystem to a new Saudi Joint Venture. In return, our partners gain the 'missing piece' to their portfolio—a project that activates their assets, creates thousands of jobs, attracts global talent and investment, and provides a powerful, youth-focused showcase for the Kingdom's ambitious vision." data-ar="أقدم شراكة استراتيجية تعود بالنفع على الطرفين. ستقوم 'كوهيجن القابضة'، بصفتها مالكة الملكية الفكرية، بترخيص هذا النظام البيئي لمشروع سعودي مشترك جديد. في المقابل، يحصل شركاؤنا على 'القطعة المفقودة' في محفظتهم، وهو مشروع يفعّل أصولهم، ويصنع آلاف الوظائف، ويجذب المواهب والاستثمارات العالمية، ويوفر واجهة عرض قوية موجهة للشباب تعكس رؤية المملكة الطموحة.">I am presenting a strategic partnership that works both ways. Cohesion Holdings, as the IP owner, will license this ecosystem to a new Saudi Joint Venture. In return, our partners gain the 'missing piece' to their portfolio—a project that activates their assets, creates thousands of jobs, attracts global talent and investment, and provides a powerful, youth-focused showcase for the Kingdom's ambitious vision.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -97,23 +103,20 @@
     <!-- Vision Section -->
     <section id="vision" class="section vision">
         <div class="container">
-            <h2 class="section-title" data-en="An Engine for Job Creation, Innovation, and Cultural Export" data-ar="محرك لصنع الوظائف والابتكار والتصدير الثقافي">An Engine for Job Creation, Innovation, and Cultural Export</h2>
+            <h2 class="section-title" data-en="A Multidimensional Extension for the Kingdom's Initiatives" data-ar="امتداد متعدد الأبعاد لمبادرات المملكة">A Multidimensional Extension for the Kingdom's Initiatives</h2>
+            <p class="section-subtitle" data-en="We Don't Compete. We Amplify." data-ar="نحن لا ننافس. نحن نضخّم الأثر.">We Don't Compete. We Amplify.</p>
             <div class="pillars-grid">
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="Job Creation & Creator Economy" data-ar="صنع الوظائف واقتصاد المبدعين">Job Creation & Creator Economy</h3>
-                    <p class="pillar-description" data-en="A virtual marketplace where users design, manufacture (via Saudi factories), and sell physical and digital products globally, creating thousands of jobs." data-ar="سوق افتراضي حيث يصمم المستخدمون ويصنّعون (عبر المصانع السعودية) ويبيعون المنتجات المادية والرقمية عالميًا، مما يصنع آلاف الوظائف.">A virtual marketplace where users design, manufacture (via Saudi factories), and sell physical and digital products globally, creating thousands of jobs.</p>
+                    <h3 class="pillar-title" data-en="For PIF & Savvy Games" data-ar="لصندوق الاستثمارات العامة و Savvy Games">For PIF & Savvy Games</h3>
+                    <p class="pillar-description" data-en="We provide a pipeline of culturally authentic, globally appealing games, turning the $38B gaming investment into a cultural export engine." data-ar="نوفر سلسلة من الألعاب الأصيلة ثقافيًا والجذابة عالميًا، مما يحول استثمار الـ 38 مليار دولار في الألعاب إلى محرك للتصدير الثقافي.">We provide a pipeline of culturally authentic, globally appealing games, turning the $38B gaming investment into a cultural export engine.</p>
                 </div>
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="Digital Twin & AI Acceleration" data-ar="التوأم الرقمي وتسريع الذكاء الاصطناعي">Digital Twin & AI Acceleration</h3>
-                    <p class="pillar-description" data-en="Utilizing digital twins to simulate, test, and accelerate projects for our partners, drastically reducing costs, time, and risk while enhancing efficiency." data-ar="استخدام التوائم الرقمية لمحاكاة واختبار وتسريع مشاريع شركائنا، مما يقلل بشكل كبير من التكاليف والوقت والمخاطر مع تعزيز الكفاءة.">Utilizing digital twins to simulate, test, and accelerate projects for our partners, drastically reducing costs, time, and risk while enhancing efficiency.</p>
+                    <h3 class="pillar-title" data-en="For NEOM Media Village" data-ar="لقرية الإعلام في نيوم">For NEOM Media Village</h3>
+                    <p class="pillar-description" data-en="We become the anchor tenant that activates your facilities, attracting other global studios and creating a constant stream of innovative marketing content." data-ar="نصبح المستأجر الرئيسي الذي يفعّل مرافقكم، ويجذب استوديوهات عالمية أخرى، ويخلق تدفقًا مستمرًا من المحتوى التسويقي المبتكر.">We become the anchor tenant that activates your facilities, attracting other global studios and creating a constant stream of innovative marketing content.</p>
                 </div>
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="Talent Incubator & Hands-On Experience" data-ar="حاضنة المواهب والخبرة العملية">Talent Incubator & Hands-On Experience</h3>
-                    <p class="pillar-description" data-en="Acting as a virtual campus and incubator for Misk and NEOM Academy talent, providing real-world, hands-on project experience." data-ar="العمل كحرم جامعي وحاضنة افتراضية لمواهب مسك وأكاديمية نيوم، وتوفير خبرة عملية حقيقية في المشاريع.">Acting as a virtual campus and incubator for Misk and NEOM Academy talent, providing real-world, hands-on project experience.</p>
-                </div>
-                <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="Global Showcase & Soft Power" data-ar="واجهة عالمية وقوة ناعمة">Global Showcase & Soft Power</h3>
-                    <p class="pillar-description" data-en="Creating trendy, youth-focused content and e-sports tournaments (in venues like Qiddiya) that build a powerful global brand for Saudi innovation." data-ar="صنع محتوى عصري موجه للشباب وبطولات رياضات إلكترونية (في أماكن مثل القدية) تبني علامة تجارية عالمية قوية للابتكار السعودي.">Creating trendy, youth-focused content and e-sports tournaments (in venues like Qiddiya) that build a powerful global brand for Saudi innovation.</p>
+                    <h3 class="pillar-title" data-en="For MISK" data-ar="لمؤسسة مسك">For MISK</h3>
+                    <p class="pillar-description" data-en="We transform your curriculum into an interactive virtual world, providing a hands-on talent incubator and amplifying your mission to a global audience." data-ar="نحول مناهجكم إلى عالم افتراضي تفاعلي، ونوفر حاضنة مواهب عملية، ونضخم أثر رسالتكم لتصل إلى جمهور عالمي.">We transform your curriculum into an interactive virtual world, providing a hands-on talent incubator and amplifying your mission to a global audience.</p>
                 </div>
             </div>
         </div>
@@ -123,9 +126,8 @@
     <section id="characters" class="section characters">
         <div class="container">
             <h2 class="section-title" data-en="Character Universe" data-ar="عالم الشخصيات">Character Universe</h2>
-            <p class="section-subtitle" data-en="Meet the ambassadors of our virtual world, representing the values and aspirations of the GCC region." data-ar="تعرف على سفراء عالمنا الافتراضي، الذين يمثلون قيم وتطلعات منطقة دول مجلس التعاون الخليجي.">Meet the ambassadors of our virtual world, representing the values and aspirations of the GCC region.</p>
             <div class="characters-grid">
-                <div class="character-card">
+                 <div class="character-card">
                     <img src="assets/images/IMG_0779.png" alt="Adnan" class="character-image" onerror="this.style.display='none'">
                     <div class="character-info">
                         <h3 class="character-name" data-en="Adnan" data-ar="عدنان">Adnan</h3>
@@ -161,7 +163,6 @@
     <section id="projects" class="section projects">
         <div class="container">
             <h2 class="section-title" data-en="Flagship Projects" data-ar="المشاريع الرئيسية">Flagship Projects</h2>
-            <p class="section-subtitle" data-en="Innovative concepts that blend entertainment, education, and cultural preservation." data-ar="مفاهيم مبتكرة تمزج بين الترفيه والتعليم والحفاظ على الثقافة.">Innovative concepts that blend entertainment, education, and cultural preservation.</p>
             <div class="projects-grid">
                 <div class="project-card">
                     <img src="assets/images/PAandTCEG.png" alt="Princess Aliyah" class="project-image" onerror="this.style.display='none'">
