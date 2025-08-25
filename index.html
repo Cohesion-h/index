@@ -1,76 +1,576 @@
+# Strategic Innovation Architect Website - Complete Code
+
+I'll provide you with the complete HTML code with all the improvements we discussed, including a language toggle for Arabic/English. You can copy and paste this entire code into a single HTML file.
+
+```html
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hamad F. Alotaibi - Strategic Innovation Architect</title>
-    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Your Original CSS Styles -->
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f8f9fa; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: #1e3a8a; color: white; padding: 1rem 0; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1 ); }
-        .nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; }
-        .nav-links { display: flex; list-style: none; gap: 1rem; }
-        .nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 5px; transition: background-color 0.3s; }
-        .nav-links a:hover { background-color: rgba(255,255,255,0.1); }
-        .lang-toggle { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 140px 0 80px; text-align: center; min-height: 100vh; display: flex; align-items: center; }
-        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; }
-        .hero-content .subtitle { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;}
-        .hero-content .tagline { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.8; font-style: italic; }
-        .cta-button { display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; transition: all 0.3s; border: 2px solid rgba(255,255,255,0.3); }
-        .cta-button:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); }
-        .section { padding: 80px 0; }
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; color: #1e3a8a; }
-        .section-subtitle { text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        .about { background: white; }
-        .about-text { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 900px; margin: 0 auto; text-align: center; }
-        .about-text p { margin-bottom: 1.5rem; }
-        .value-prop { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; }
-        .characters { background: #f8f9fa; }
-        .characters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .character-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .character-image { width: 100%; height: 250px; object-fit: cover; }
-        .character-info { padding: 1.5rem; }
-        .character-name { font-size: 1.5rem; color: #1e3a8a; margin-bottom: 0.5rem; }
-        .character-role { color: #3b82f6; font-weight: 600; margin-bottom: 1rem; }
-        .projects { background: white; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-        .project-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .project-image { width: 100%; height: 200px; object-fit: cover; }
-        .project-info { padding: 1.5rem; }
-        .project-title { font-size: 1.3rem; color: #1e3a8a; margin-bottom: 1rem; }
-        .vision { background: #f8f9fa; }
-        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        .pillar-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
-        .pillar-title { font-size: 1.3rem; color: #1e3a8a; margin-bottom: 1rem; font-weight: 600; }
-        .pillar-description { color: #666; line-height: 1.6; font-size: 0.95rem; }
-        .contact { background: #1e3a8a; color: white; text-align: center; }
-        .contact .section-title, .contact .section-subtitle { color: white; }
-        .whatsapp-button { display: inline-block; background: #25D366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; margin: 20px 0; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .copyright { background: #1e40af; color: white; text-align: center; padding: 1rem 0; font-size: 0.9rem; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.9);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 8px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #1e3a8a;
+            color: #1e3a8a;
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            background: #1e3a8a;
+            color: white;
+        }
+
+        /* Header */
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Acknowledgement Section */
+        .acknowledgement {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+        }
+
+        .acknowledgement-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .acknowledgement-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+
+        .acknowledgement h2 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .acknowledgement p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .pledge-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+
+        .pledge-box h3 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .pledge-box p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 0;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Strategic Value Section */
+        .strategy {
+            background: #f8f9fa;
+        }
+
+        /* Characters Section */
+        .characters {
+            background: white;
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .character-info {
+            padding: 1.5rem;
+        }
+
+        .character-name {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            color: #3b82f6;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .character-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Vision Section */
+        .vision {
+            background: white;
+        }
+
+        .vision-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vision-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .pillar-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .pillar-title {
+            font-size: 1.3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .pillar-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-details {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Copyright */
+        .copyright {
+            background: #1e40af;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .language-toggle {
+                top: 80px;
+                right: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .characters-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .acknowledgement-icon {
+                font-size: 2rem;
+            }
+            
+            .acknowledgement h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Arabic specific styles */
+        .arabic-text {
+            display: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body.rtl .arabic-text {
+            display: block;
+        }
+        
+        body.rtl .english-text {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="switchLanguage('ar')">AR</button>
+    </div>
 
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <div class="logo" data-en="Cohesion Holdings" data-ar="كوهيجن القابضة">Cohesion Holdings</div>
+            <div class="logo">Cohesion Holdings</div>
             <ul class="nav-links">
-                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="#about" data-en="The Vision" data-ar="الرؤية">The Vision</a></li>
-                <li><a href="#vision" data-en="The Ecosystem" data-ar="النظام البيئي">The Ecosystem</a></li>
-                <li><a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a></li>
-                <li><a href="#contact" data-en="Contact" data-ar="التواصل">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#acknowledgement">Acknowledgement</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#strategy">Strategy</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <button id="lang-toggle" class="lang-toggle">العربية</button>
         </nav>
     </header>
 
@@ -78,10 +578,51 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 data-en="A Strategic Partnership Proposal to Accelerate Vision 2030" data-ar="مقترح شراكة استراتيجية لتسريع رؤية 2030">A Strategic Partnership Proposal to Accelerate Vision 2030</h1>
-                <p class="subtitle" data-en="From the architect of THEE OASIS: A turnkey digital ecosystem designed to synergize PIF investments, activate the NEOM Media Village, and amplify MISK's mission." data-ar="من مهندس مشروع الواحة: نظام بيئي رقمي متكامل، مصمم لتوحيد استثمارات صندوق الاستثمارات العامة، وتفعيل قرية الإعلام في نيوم، ومضاعفة أثر رسالة مؤسسة مسك.">From the architect of THEE OASIS: A turnkey digital ecosystem designed to synergize PIF investments, activate the NEOM Media Village, and amplify MISK's mission.</p>
-                <p class="tagline" data-en="This is the missing piece." data-ar="هذه هي القطعة المفقودة.">This is the missing piece.</p>
-                <a href="#about" class="cta-button" data-en="Discover the Blueprint" data-ar="اكتشف المخطط">Discover the Blueprint</a>
+                <h1 class="english-text">Hamad F. Alotaibi</h1>
+                <h1 class="arabic-text">حمد فهد العتيبي</h1>
+                <p class="subtitle english-text">Strategic Innovation Architect</p>
+                <p class="subtitle arabic-text">مهندس الابتكار الاستراتيجي</p>
+                <p class="tagline english-text">One individual. Multiple breakthrough concepts. Proven execution capability.</p>
+                <p class="tagline arabic-text">فرد واحد. مفاهيم مبتكرة متعددة. قدرة مثبتة على التنفيذ.</p>
+                <a href="#strategy" class="cta-button english-text">Explore the Partnership Model</a>
+                <a href="#strategy" class="cta-button arabic-text">استكشف نموذج الشراكة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acknowledgement Section -->
+    <section id="acknowledgement" class="acknowledgement">
+        <div class="container">
+            <div class="acknowledgement-content">
+                <div class="acknowledgement-icon">🤝</div>
+                
+                <h2 class="english-text">In Recognition of a Transformative Vision</h2>
+                <h2 class="arabic-text">تقديرًا لرؤية تحويلية</h2>
+                
+                <p class="english-text">
+                    This proposal is presented with deep respect for the monumental achievements under the leadership of Crown Prince Mohammed bin Salman. Vision 2030 has not only redefined the ambition of a nation but has created an unprecedented platform for innovation and global leadership.
+                </p>
+                <p class="arabic-text">
+                    يقدم هذا الاقتراح باحترام عميق للإنجازات الهائلة تحت قيادة صاحب السمو الملكي الأمير محمد بن سلمان. لم تعيد رؤية 2030 تعريف طموح الأمة فحسب، بل خلقت منصة غير مسبوقة للابتكار والقيادة العالمية.
+                </p>
+                
+                <p class="english-text">
+                    We do not seek to build anew, but to <strong>accelerate and enhance</strong> the existing pillars of this vision. Our purpose is to serve as a collaborative force—a strategic ally that adds a new dimension to the groundbreaking work of PIF, MISK, NEOM, and Savvy Games Group.
+                </p>
+                <p class="arabic-text">
+                    نحن لا نسعى لبناء جديد، ولكن <strong>لتسريع وتعزيز</strong> أركان هذه الرؤية الحالية. هدفنا هو أن نكون قوة تعاونية - حليف استراتيجي يضيف بُعدًا جديدًا للأعمال الرائدة لصندوق الاستثمارات العامة، ومؤسسة مسك، ونيوم، ومجموعة سافي للألعاب.
+                </p>
+
+                <div class="pledge-box">
+                    <h3 class="english-text">Our Pledge of Collaboration</h3>
+                    <h3 class="arabic-text">عهدنا بالتعاون</h3>
+                    <p class="english-text" style="font-style: italic;">
+                        "To be a catalyst, not a competitor. To integrate, not disrupt. We are here to elevate the profiles of every partner, contribute to the CVs of every participant, and add measurable value to every objective. This is a journey we build together, leaving a legacy of collective accomplishment."
+                    </p>
+                    <p class="arabic-text" style="font-style: italic; direction: rtl;">
+                        "أن نكون حافزًا، وليس منافسًا. للدمج، وليس التعطيل. نحن هنا لرفع ملفات كل شريك، والمساهمة في سير ذاتية لكل مشارك، وإضافة قيمة قابلة للقياس لكل هدف. هذه رحلة نبنيها معًا، تاركين إرثًا من الإنجاز الجماعي."
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -89,35 +630,101 @@
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title" data-en="The Architect & The Vision" data-ar="المهندس والرؤية">The Architect & The Vision</h2>
-            <div class="about-text">
-                <h3 data-en="Hamad F. Alotaibi, Strategic Innovation Architect" data-ar="حمد ف. العتيبي، مهندس الابتكار الاستراتيجي" style="color: #1e3a8a; font-size: 1.8rem; margin-bottom: 1rem;">Hamad F. Alotaibi, Strategic Innovation Architect</h3>
-                <p data-en="For the past two years, I have independently architected 'THEE OASIS,' a comprehensive digital nation. This is not a concept; it is a fully developed blueprint integrating AI, gaming, a creator economy, and digital twin technology. My work is a demonstration of relentless execution, driven by a mission to empower the youth of the GCC." data-ar="على مدى العامين الماضيين، قمت بشكل مستقل بتصميم 'الواحة' (THEE OASIS)، وهي أمة رقمية شاملة. هذا ليس مجرد مفهوم، بل هو مخطط متكامل يدمج الذكاء الاصطناعي، والألعاب، واقتصاد المبدعين، وتقنية التوأم الرقمي. عملي هو برهان على التنفيذ الدؤوب، مدفوعًا برسالة تمكين شباب دول مجلس التعاون الخليجي.">For the past two years, I have independently architected 'THEE OASIS,' a comprehensive digital nation. This is not a concept; it is a fully developed blueprint integrating AI, gaming, a creator economy, and digital twin technology. My work is a demonstration of relentless execution, driven by a mission to empower the youth of the GCC.</p>
-                <div class="value-prop">
-                    <p data-en="I am presenting a strategic partnership that works both ways. Cohesion Holdings, as the IP owner, will license this ecosystem to a new Saudi Joint Venture. In return, our partners gain the 'missing piece' to their portfolio—a project that activates their assets, creates thousands of jobs, attracts global talent and investment, and provides a powerful, youth-focused showcase for the Kingdom's ambitious vision." data-ar="أقدم شراكة استراتيجية تعود بالنفع على الطرفين. ستقوم 'كوهيجن القابضة'، بصفتها مالكة الملكية الفكرية، بترخيص هذا النظام البيئي لمشروع سعودي مشترك جديد. في المقابل، يحصل شركاؤنا على 'القطعة المفقودة' في محفظتهم، وهو مشروع يفعّل أصولهم، ويصنع آلاف الوظائف، ويجذب المواهب والاستثمارات العالمية، ويوفر واجهة عرض قوية موجهة للشباب تعكس رؤية المملكة الطموحة.">I am presenting a strategic partnership that works both ways. Cohesion Holdings, as the IP owner, will license this ecosystem to a new Saudi Joint Venture. In return, our partners gain the 'missing piece' to their portfolio—a project that activates their assets, creates thousands of jobs, attracts global talent and investment, and provides a powerful, youth-focused showcase for the Kingdom's ambitious vision.</p>
+            <h2 class="section-title english-text">About</h2>
+            <h2 class="section-title arabic-text">عني</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label english-text">Years of Development</div>
+                    <div class="stat-label arabic-text">سنوات من التطوير</div>
                 </div>
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label english-text">Virtual Portals</div>
+                    <div class="stat-label arabic-text">بوابة افتراضية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label english-text">Original Characters</div>
+                    <div class="stat-label arabic-text">شخصيات أصلية</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label english-text">Self-Developed</div>
+                    <div class="stat-label arabic-text">تم تطويره ذاتيًا</div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <p class="english-text">
+                    As a Strategic Innovation Architect, I have dedicated the past two years to creating a comprehensive digital ecosystem that serves the youth of the GCC region. Every concept, character, and strategic framework has been developed independently, driven by a genuine commitment to empowering others through technology and education.
+                </p>
+                <p class="arabic-text" style="direction: rtl; text-align: right;">
+                    كمهندس للابتكار الاستراتيجي، كرست العامين الماضيين لإنشاء نظام بيئي رقمي شامل يخدم شباب منطقة الخليج. كل مفهوم، وشخصية، وإطار استراتيجي تم تطويره بشكل مستقل، مدفوعًا بالتزام حقيقي لتمكين الآخرين through technology and education.
+                </p>
+                
+                <p class="english-text">
+                    My work represents the intersection of cultural authenticity, technological innovation, and educational excellence. From character creation to platform architecture, each element is designed to honor our heritage while preparing our youth for the future.
+                </p>
+                <p class="arabic-text" style="direction: rtl; text-align: right;">
+                    يمثل عملي تقاطع الأصالة الثقافية، والابتكار التكنولوجي، والتميز التعليمي. من إنشاء الشخصيات إلى هندسة المنصة، كل عنصر مصمم لتكريم تراثنا مع إعداد شبابنا للمستقبل.
+                </p>
+                
+                <p class="english-text">
+                    This portfolio showcases not just projects, but a vision for how digital platforms can accelerate national transformation, create economic opportunities, and preserve cultural values in an increasingly connected world.
+                </p>
+                <p class="arabic-text" style="direction: rtl; text-align: right;">
+                    لا يعرض هذا Portfolio المشاريع فحسب، بل رؤية لكيفية يمكن للمنصات الرقمية تسريع التحول الوطني، وخلق فرص اقتصادية، والحفاظ على القيم الثقافية في عالم متصل بشكل متزايد.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Vision Section -->
-    <section id="vision" class="section vision">
+    <!-- Strategic Value Section -->
+    <section id="strategy" class="section strategy">
         <div class="container">
-            <h2 class="section-title" data-en="A Multidimensional Extension for the Kingdom's Initiatives" data-ar="امتداد متعدد الأبعاد لمبادرات المملكة">A Multidimensional Extension for the Kingdom's Initiatives</h2>
-            <p class="section-subtitle" data-en="We Don't Compete. We Amplify." data-ar="نحن لا ننافس. نحن نضخّم الأثر.">We Don't Compete. We Amplify.</p>
+            <h2 class="section-title english-text">A Partnership Built on Strategic Alignment</h2>
+            <h2 class="section-title arabic-text">شراكة مبنية على المحاذاة الاستراتيجية</h2>
+            <p class="section-subtitle english-text">We don't create new goals; we provide the engine to achieve yours faster, more efficiently, and with greater impact.</p>
+            <p class="section-subtitle arabic-text">نحن لا نخلق أهدافًا جديدة؛ نقدم المحرك لتحقيق أهدافك بشكل أسرع، وأكثر كفاءة، وبأثر أكبر.</p>
+            
             <div class="pillars-grid">
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="For PIF & Savvy Games" data-ar="لصندوق الاستثمارات العامة و Savvy Games">For PIF & Savvy Games</h3>
-                    <p class="pillar-description" data-en="We provide a pipeline of culturally authentic, globally appealing games, turning the $38B gaming investment into a cultural export engine." data-ar="نوفر سلسلة من الألعاب الأصيلة ثقافيًا والجذابة عالميًا، مما يحول استثمار الـ 38 مليار دولار في الألعاب إلى محرك للتصدير الثقافي.">We provide a pipeline of culturally authentic, globally appealing games, turning the $38B gaming investment into a cultural export engine.</p>
+                    <h3 class="pillar-title english-text">For MISK Foundation</h3>
+                    <h3 class="pillar-title arabic-text">لمؤسسة مسك</h3>
+                    <p class="pillar-description english-text">
+                        We transform your educational programs into immersive, AI-driven experiences. THEE OASIS becomes the ultimate digital twin for talent development, providing measurable skills, job placement, and a direct pipeline of innovators ready to contribute to the economy.
+                    </p>
+                    <p class="pillar-description arabic-text" style="direction: rtl; text-align: right;">
+                        نحول برامجكم التعليمية إلى تجارب غامسة مدعومة بالذكاء الاصطناعي. تصبح THEE OASIS التوأم الرقمي ultimate لتطوير المواهب، providing مهارات قابلة للقياس، والتوظيف، وخطة مباشرة للمبتكرين المستعدين للمساهمة في الاقتصاد.
+                    </p>
                 </div>
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="For NEOM Media Village" data-ar="لقرية الإعلام في نيوم">For NEOM Media Village</h3>
-                    <p class="pillar-description" data-en="We become the anchor tenant that activates your facilities, attracting other global studios and creating a constant stream of innovative marketing content." data-ar="نصبح المستأجر الرئيسي الذي يفعّل مرافقكم، ويجذب استوديوهات عالمية أخرى، ويخلق تدفقًا مستمرًا من المحتوى التسويقي المبتكر.">We become the anchor tenant that activates your facilities, attracting other global studios and creating a constant stream of innovative marketing content.</p>
+                    <h3 class="pillar-title english-text">For PIF & Savvy Games Group</h3>
+                    <h3 class="pillar-title arabic-text">لصندوق الاستثمارات العامة ومجموعة سافي</h3>
+                    <p class="pillar-description english-text">
+                        We provide the culturally-authentic IP and gameplay that fulfills Savvy's content mandate. Our platform turns players into creators, adding a powerful economic layer to your gaming investments and creating a new, exportable class of Saudi cultural products.
+                    </p>
+                    <p class="pillar-description arabic-text" style="direction: rtl; text-align: right;">
+                        نقدم الملكية الفكرية الأصيلة ثقافيًا وال gameplay التي تفي بmandate المحتوى لسافي. تحول منصتنا اللاعبين إلى مبدعين، مضيفة طبقة اقتصادية قوية لاستثماراتكم في gaming وخلق فئة جديدة قابلة للتصدير من المنتجات الثقافية السعودية.
+                    </p>
                 </div>
                 <div class="pillar-card">
-                    <h3 class="pillar-title" data-en="For MISK" data-ar="لمؤسسة مسك">For MISK</h3>
-                    <p class="pillar-description" data-en="We transform your curriculum into an interactive virtual world, providing a hands-on talent incubator and amplifying your mission to a global audience." data-ar="نحول مناهجكم إلى عالم افتراضي تفاعلي، ونوفر حاضنة مواهب عملية، ونضخم أثر رسالتكم لتصل إلى جمهور عالمي.">We transform your curriculum into an interactive virtual world, providing a hands-on talent incubator and amplifying your mission to a global audience.</p>
+                    <h3 class="pillar-title english-text">For NEOM</h3>
+                    <h3 class="pillar-title arabic-text">لنيوم</h3>
+                    <p class="pillar-description english-text">
+                        We become the anchor content creator for the Media Village. We produce the first "Made in NEOM" games and virtual experiences, attracting global talent to live and work there, and providing a stunning proof-of-concept for the world.
+                    </p>
+                    <p class="pillar-description arabic-text" style="direction: rtl; text-align: right;">
+                        نصبح منشئ المحتوى الرئيسي لقرية الإعلام. ننتج أول ألعاب "صنع في نيوم" وتجارب افتراضية، جذب المواهب العالمية للعيش والعمل هناك، وتقديم proof-of-concept مذهل للعالم.
+                    </p>
                 </div>
+            </div>
+
+            <div class="about-text">
+                <p class="english-text"><strong>The Outcome:</strong> A partnership that accelerates Vision 2030 by connecting sovereign investments into a single, powerful engine for youth empowerment, job creation, and global cultural leadership.</p>
+                <p class="arabic-text" style="direction: rtl; text-align: right;"><strong>النتيجة:</strong> شراكة تسرع رؤية 2030 من خلال ربط الاستثمارات السيادية في محرك واحد قوي لتمكين الشباب، وخلق فرص العمل، والقيادة الثقافية العالمية.</p>
             </div>
         </div>
     </section>
@@ -125,34 +732,53 @@
     <!-- Characters Section -->
     <section id="characters" class="section characters">
         <div class="container">
-            <h2 class="section-title" data-en="Character Universe" data-ar="عالم الشخصيات">Character Universe</h2>
+            <h2 class="section-title english-text">Character Universe</h2>
+            <h2 class="section-title arabic-text">عالم الشخصيات</h2>
+            <p class="section-subtitle english-text">Meet the guardians and ambassadors of THEE OASIS virtual platform, representing the unity and diversity of the GCC region.</p>
+            <p class="section-subtitle arabic-text">تعرف على حراس وسفراء المنصة الافتراضية THEE OASIS، representing وحدة وتنوع منطقة الخليج.</p>
+            
             <div class="characters-grid">
-                 <div class="character-card">
-                    <img src="assets/images/IMG_0779.png" alt="Adnan" class="character-image" onerror="this.style.display='none'">
+                <div class="character-card">
+                    <div class="character-image">👨‍💼</div>
                     <div class="character-info">
-                        <h3 class="character-name" data-en="Adnan" data-ar="عدنان">Adnan</h3>
-                        <p class="character-role" data-en="Environmental Guardian (Kuwait)" data-ar="حارس البيئة (الكويت)">Environmental Guardian (Kuwait)</p>
+                        <h3 class="character-name">Adnan</h3>
+                        <p class="character-role english-text">Environmental Guardian (Kuwait)</p>
+                        <p class="character-role arabic-text">حارس البيئة (الكويت)</p>
+                        <p class="character-description english-text">Dedicated to sustainability and environmental protection, Adnan leads initiatives for clean energy solutions and wildlife conservation across the virtual platform.</p>
+                        <p class="character-description arabic-text" style="direction: rtl; text-align: right;">مكرس للاستدامة وحماية البيئة، يقود عدنان مبادرات لحلول الطاقة النظيفة والحفاظ على الحياة البرية across المنصة الافتراضية.</p>
                     </div>
                 </div>
+                
                 <div class="character-card">
-                    <img src="assets/images/IMG_0780.png" alt="Noura" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-image">👩‍🔬</div>
                     <div class="character-info">
-                        <h3 class="character-name" data-en="Noura" data-ar="نورة">Noura</h3>
-                        <p class="character-role" data-en="Sustainability Advocate (Kuwait)" data-ar="داعية الاستدامة (الكويت)">Sustainability Advocate (Kuwait)</p>
+                        <h3 class="character-name">Noura</h3>
+                        <p class="character-role english-text">Sustainability Advocate (Kuwait)</p>
+                        <p class="character-role arabic-text">ناشطة الاستدامة (الكويت)</p>
+                        <p class="character-description english-text">Noura's passion for environmental stewardship drives her mission to educate users about sustainable living and renewable energy solutions.</p>
+                        <p class="character-description arabic-text" style="direction: rtl; text-align: right;">شغف نورة بالوصاية البيئية يدفع مهمتها لتثقيف المستخدمين about العيش المستدام وحلول الطاقة المتجددة.</p>
                     </div>
                 </div>
+                
                 <div class="character-card">
-                    <img src="assets/images/IMG_0781.png" alt="Faris" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-image">🦸‍♂️</div>
                     <div class="character-info">
-                        <h3 class="character-name" data-en="Faris" data-ar="فارس">Faris</h3>
-                        <p class="character-role" data-en="Clean Energy Knight (Saudi Arabia)" data-ar="فارس الطاقة النظيفة (السعودية)">Clean Energy Knight (Saudi Arabia)</p>
+                        <h3 class="character-name">Faris</h3>
+                        <p class="character-role english-text">Clean Energy Knight (Saudi Arabia)</p>
+                        <p class="character-role arabic-text">فارس الطاقة النظيفة (السعودية)</p>
+                        <p class="character-description english-text">As the guardian of green technology, Faris champions Saudi Arabia's renewable energy initiatives and environmental protection efforts.</p>
+                        <p class="character-description arabic-text" style="direction: rtl; text-align: right;">كحارس التكنولوجيا الخضراء، ي champion فاريس مبادرات الطاقة المتجددة في السعودية وجهود حماية البيئة.</p>
                     </div>
                 </div>
+                
                 <div class="character-card">
-                    <img src="assets/images/IMG_0782.jpeg" alt="Jude" class="character-image" onerror="this.style.display='none'">
+                    <div class="character-image">👸</div>
                     <div class="character-info">
-                        <h3 class="character-name" data-en="Jude" data-ar="جود">Jude</h3>
-                        <p class="character-role" data-en="Digital Tourism Ambassador (Saudi Arabia)" data-ar="سفيرة السياحة الرقمية (السعودية)">Digital Tourism Ambassador (Saudi Arabia)</p>
+                        <h3 class="character-name">Jude</h3>
+                        <p class="character-role english-text">Digital Tourism Ambassador (Saudi Arabia)</p>
+                        <p class="character-role arabic-text">سفير السياحة الرقمية (السعودية)</p>
+                        <p class="character-description english-text">Embodying Saudi hospitality, Jude welcomes visitors to explore the Kingdom's rich culture and heritage through innovative digital tourism experiences.</p>
+                        <p class="character-description arabic-text" style="direction: rtl; text-align: right;">تجسيدًا للضيافة السعودية، يرحب جود بالزوار لاستكشاف ثقافة المملكة الغنية وتراثها through تجارب سياحية رقمية مبتكرة.</p>
                     </div>
                 </div>
             </div>
@@ -162,80 +788,45 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
-            <h2 class="section-title" data-en="Flagship Projects" data-ar="المشاريع الرئيسية">Flagship Projects</h2>
+            <h2 class="section-title english-text">Featured Projects</h2>
+            <h2 class="section-title arabic-text">المشاريع المميزة</h2>
+            <p class="section-subtitle english-text">Innovative concepts that blend entertainment, education, and cultural preservation to create meaningful digital experiences.</p>
+            <p class="section-subtitle arabic-text">مفاهيم مبتكرة تدمج الترفيه، التعليم، والحفاظ الثقافي لخلق تجارب رقمية meaningful.</p>
+            
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="assets/images/PAandTCEG.png" alt="Princess Aliyah" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-image">👑</div>
                     <div class="project-info">
-                        <h3 class="project-title" data-en="Princess Aliyah Series" data-ar="سلسلة الأميرة علياء">Princess Aliyah Series</h3>
+                        <h3 class="project-title english-text">Princess Aliyah and the Cutting Edge of Glory</h3>
+                        <h3 class="project-title arabic-text">الأميرة عليّة وحافة المجد</h3>
+                        <p class="project-description english-text">An epic four-season series featuring Princess Aliyah, her AI companion Mia, and the legendary bionic horse Obaya. This culturally-authentic narrative celebrates Saudi heritage while exploring themes of innovation, courage, and unity.</p>
+                        <p class="project-description arabic-text" style="direction: rtl; text-align: right;">مسلسل ملحمي من أربعة مواسم featuring الأميرة عليّة، رفيقتها الذكاء الاصطناعي ميا، والحصان البيونيك الأسطوري obaya. هذه السردية الأصيلة ثقافيًا تحتفل بالتراث السعودي while تستكشف themes الابتكار، الشجاعة، والوحدة.</p>
                     </div>
                 </div>
+                
                 <div class="project-card">
-                    <img src="assets/images/thegcc.png" alt="The GCC Blockchain Quest" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-image">🔗</div>
                     <div class="project-info">
-                        <h3 class="project-title" data-en="The GCC Blockchain Quest" data-ar="مهمة بلوكتشين الخليج">The GCC Blockchain Quest</h3>
+                        <h3 class="project-title english-text">The GCC Blockchain Quest</h3>
+                        <h3 class="project-title arabic-text">مهمة بلوكشين مجلس التعاون الخليجي</h3>
+                        <p class="project-description english-text">A collaborative gaming experience where players from each GCC country work together to build secure blockchain networks, promoting cooperation, strategic thinking, and technological literacy across the region.</p>
+                        <p class="project-description arabic-text" style="direction: rtl; text-align: right;">تجربة gaming تعاونية where يعمل اللاعبون من each دولة خليجية معًا لبناء شبكات بلوكشين آمنة، promoting التعاون، التفكير الاستراتيجي، وال literacy التكنولوجية across المنطقة.</p>
                     </div>
                 </div>
+                
                 <div class="project-card">
-                    <img src="assets/images/IMG_0783.png" alt="THEE OASIS Platform" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-image">🌐</div>
                     <div class="project-info">
-                        <h3 class="project-title" data-en="THEE OASIS Virtual Platform" data-ar="منصة الواحة الافتراضية">THEE OASIS Virtual Platform</h3>
+                        <h3 class="project-title english-text">THEE OASIS Virtual Platform</h3>
+                        <h3 class="project-title arabic-text">المنصة الافتراضية THEE OASIS</h3>
+                        <p class="project-description english-text">A comprehensive digital ecosystem featuring 13 specialized portals, creator economy tools, educational gaming, and cultural preservation initiatives designed to empower GCC youth and preserve regional heritage.</p>
+                        <p class="project-description arabic-text" style="direction: rtl; text-align: right;">نظام بيئي رقمي شامل featuring 13 بوابة متخصصة، أدوات economy المبدعين، gaming تعليمي، ومبادرات الحفاظ الثقافي designed لتمكين شباب الخليج والحفاظ على التراث الإقليمي.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title" data-en="Ready for Strategic Partnership" data-ar="مستعدون لشراكة استراتيجية">Ready for Strategic Partnership</h2>
-            <p class="section-subtitle" data-en="Let's connect and discuss how we can accelerate our shared goals." data-ar="لنتواصل ونناقش كيف يمكننا تسريع أهدافنا المشتركة.">Let's connect and discuss how we can accelerate our shared goals.</p>
-            <a href="https://wa.me/96551179990?text=Hello!%20I%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20strategic%20partnership." target="_blank" class="whatsapp-button">
-                <i class="fab fa-whatsapp" style="margin-right: 10px;"></i>
-                <span data-en="Chat on WhatsApp" data-ar="تواصل عبر الواتساب">Chat on WhatsApp</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- Copyright Footer -->
-    <footer class="copyright">
-        <p data-en="&copy; 2025 Cohesion Holdings. All Rights Reserved." data-ar="&copy; 2025 كوهيجن القابضة. جميع الحقوق محفوظة.">&copy; 2025 Cohesion Holdings. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript for Language Toggle -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function ( ) {
-            const langToggle = document.getElementById('lang-toggle');
-            const elementsToTranslate = document.querySelectorAll('[data-en]');
-            const htmlEl = document.documentElement;
-
-            function translatePage(lang) {
-                elementsToTranslate.forEach(el => {
-                    if (el.dataset[lang]) {
-                        el.innerHTML = el.dataset[lang];
-                    }
-                });
-
-                if (lang === 'ar') {
-                    htmlEl.lang = 'ar';
-                    htmlEl.dir = 'rtl';
-                    langToggle.textContent = 'English';
-                } else {
-                    htmlEl.lang = 'en';
-                    htmlEl.dir = 'ltr';
-                    langToggle.textContent = 'العربية';
-                }
-            }
-
-            langToggle.addEventListener('click', () => {
-                const currentLang = htmlEl.lang || 'en';
-                const newLang = currentLang === 'en' ? 'ar' : 'en';
-                translatePage(newLang);
-            });
-
-            translatePage('en');
-        });
-    </script>
-</body>
-</html>
+    <!-- Vision Section -->
+    <section id="vision" class="section vision">
+        <div class="container
