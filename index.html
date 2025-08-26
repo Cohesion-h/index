@@ -1,3 +1,30 @@
+Of course. I understand perfectly. You want to make two critical refinements to achieve the final, perfect level of sophistication:
+
+1.  **Format the Recipient List:** The names and titles on the invitation card must be formatted exactly like your screenshot, with the title appearing directly beneath each name. This is a crucial detail for showing respect and professionalism.
+2.  **Refine the Accent Color:** You want to replace the blue with a more understated, luxurious, and sophisticated color that feels modern and high-end.
+
+I agree completely. These changes will elevate the design significantly.
+
+### **The Color Refinement**
+
+Instead of the standard corporate blue, I suggest a **deep, strategic teal-green**. This color is associated with wisdom, innovation, and balanced growth. It is sophisticated, unique, and looks exceptional in both light and dark modes.
+
+*   **New Accent Color:** `#008080` (A deep, elegant teal)
+
+### **The Code Adjustments**
+
+I have modified the code to implement these two changes.
+
+1.  I have restructured the HTML for the recipient list to match your screenshot's format.
+2.  I have replaced the old blue accent color (`--primary-accent`) with the new sophisticated teal (`#008080`) in the CSS.
+
+---
+
+### **The Final, Definitive HTML Code**
+
+This is the complete, standalone `index.html` file with your requested refinements. Replace your old code entirely with this new version.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,35 +36,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- FONT IMPORT (TT Norms Pro ) & BASIC SETUP --- */
+        /* --- FONT IMPORT (TT Norms Pro) & BASIC SETUP --- */
         @font-face {
             font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Regular.woff2' ) format('woff2');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Regular.woff2') format('woff2');
             font-weight: 400;
             font-style: normal;
         }
         @font-face {
             font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Medium.woff2' ) format('woff2');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Medium.woff2') format('woff2');
             font-weight: 500;
             font-style: normal;
         }
         @font-face {
             font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Bold.woff2' ) format('woff2');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Bold.woff2') format('woff2');
             font-weight: 700;
             font-style: normal;
         }
 
         :root {
-            --bg-color: #f8f9fa; /* Light Mode Background */
-            --font-color: #212529; /* Light Mode Font */
+            --bg-color: #f8f9fa;
+            --font-color: #212529;
             --card-color: #ffffff;
             --border-color: #dee2e6;
             
-            --primary-accent: #005A9C; /* A deeper, more corporate blue */
-            --secondary-accent: #6c757d; /* A subtle grey for secondary text */
-            
+            /* REFINED ACCENT COLOR */
+            --primary-accent: #008080; /* Deep, sophisticated teal */
+            --primary-accent-hover: #006666; /* Darker shade for hover */
+
+            --secondary-accent: #6c757d;
             --font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
@@ -96,23 +125,32 @@
             font-weight: 500;
             font-size: 1rem;
             color: var(--secondary-accent);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
-        .invitation-card p {
-            font-weight: 400;
+        
+        /* REFINED RECIPIENT STYLING */
+        .recipient {
+            margin-bottom: 1.25rem;
+        }
+        .recipient .name {
+            font-weight: 500;
             font-size: 1.1rem;
-            margin-bottom: 2rem;
-            padding-left: 1rem;
-            border-left: 2px solid var(--border-color);
+            color: var(--font-color);
+        }
+        .recipient .title {
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--secondary-accent);
         }
 
-        .invitation-card .subject {
+
+        .invitation-card .subject-section {
             margin-top: 2.5rem;
-            padding-left: 0;
-            border-left: none;
+        }
+        
+        .invitation-card .subject-text {
             font-size: 1.3rem;
             font-weight: 500;
             color: var(--primary-accent);
@@ -134,7 +172,7 @@
         }
 
         .proceed-btn:hover {
-            background-color: #004170;
+            background-color: var(--primary-accent-hover);
             transform: translateY(-3px);
         }
 
@@ -338,7 +376,7 @@
         }
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 90, 156, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.2);
         }
         .cta-btn.secondary:hover {
             background-color: var(--primary-accent);
@@ -370,30 +408,20 @@
         </div>
         <div class="invitation-card">
             <h2>To:</h2>
-            <p>
-                HRH Prince Faisal bin Bandar bin Sultan Al Saud  
+            <div id="recipient-list">
+                <!-- Recipient list will be dynamically inserted here by JavaScript -->
+            </div>
+            
+            <h2 style="margin-top: 2rem;">From:</h2>
+            <div class="recipient">
+                <div class="name">Hamad F. Alotaibi</div>
+                <div class="title">Strategic Innovation Architect</div>
+            </div>
 
-                Mr. Brian Ward  
-
-                Mr. Majid Mufti  
-
-                Mr. Vishal Wanchoo  
-
-                Mr. Joseph Bradley  
-
-                Mr. Michael Lynch  
-
-                Mr. Toby Evan-Jones  
-
-                Mr. Mishary Alibraheem  
-
-                Mr. Omar Najjar
-            </p>
-            <h2>From:</h2>
-            <p>Hamad F. Alotaibi  
-Strategic Innovation Architect</p>
-            <h2 class="subject">Subject:</h2>
-            <p class="subject" style="border:none; padding-left:0;">A Strategic Partnership Proposal to Co-Architect a Sovereign Digital Ecosystem</p>
+            <div class="subject-section">
+                <h2>Subject:</h2>
+                <div class="subject-text">A Strategic Partnership Proposal to Co-Architect a Sovereign Digital Ecosystem</div>
+            </div>
             
             <button id="proceedButton" class="proceed-btn">Proceed to Secure Briefing</button>
         </div>
@@ -471,7 +499,7 @@ Strategic Innovation Architect</p>
         <section class="section">
             <h2 class="section-headline">A Meticulously Planned, De-Risked Path to Execution.</h2>
             <div class="tabs-container">
-                <div class="tab active" onclick="openTab(event, 'Structure' )">The Structure</div>
+                <div class="tab active" onclick="openTab(event, 'Structure')">The Structure</div>
                 <div class="tab" onclick="openTab(event, 'Process')">The Process</div>
                 <div class="tab" onclick="openTab(event, 'Technology')">The Technology</div>
             </div>
@@ -509,8 +537,8 @@ Strategic Innovation Architect</p>
                 The immense potential of this project lies in its interconnectedness. We therefore respectfully propose a joint strategic meeting to explore these powerful cross-portfolio synergies. We are ready for immediate engagement and can travel to the Kingdom to facilitate the next steps.
             </p>
             <div class="cta-buttons">
-                <a id="pdfLink" href="#" class="cta-btn primary"><i class="fas fa-file-pdf"></i> Access Full Proposal (PDF)</a>
-                <a id="whatsappLink" href="#" class="cta-btn secondary"><i class="fab fa-whatsapp"></i> Schedule a Direct Call</a>
+                <a id="pdfLink" href="#" target="_blank" class="cta-btn primary"><i class="fas fa-file-pdf"></i> Access Full Proposal (PDF)</a>
+                <a id="whatsappLink" href="#" target="_blank" class="cta-btn secondary"><i class="fab fa-whatsapp"></i> Schedule a Direct Call</a>
             </div>
         </section>
 
@@ -520,19 +548,37 @@ Strategic Innovation Architect</p>
         document.addEventListener('DOMContentLoaded', function() {
             
             // --- Configuration ---
-            // IMPORTANT: Change the password and links below.
-            const accessPassword = 'Vision2030'; // <-- CHANGE THIS PASSWORD
-            const pdfLinkUrl = 'https://cohesion-h.github.io/index/Strategic%20Partnership%20Proposal_%20Digital%20Innovation%20Ecosystem%204.pdf'; // <-- PASTE YOUR PDF LINK HERE
-            const whatsappLinkUrl = 'https://wa.me/96551179990'; // <-- PASTE YOUR WHATSAPP LINK HERE
+            const accessPassword = 'Vision2030'; 
+            const pdfLinkUrl = 'https://cohesion-h.github.io/index/Strategic%20Partnership%20Proposal_%20Digital%20Innovation%20Ecosystem%204.pdf';
+            const whatsappLinkUrl = 'https://wa.me/96551179990'; 
+
+            const recipients = [
+                { name: 'HRH Prince Faisal bin Bandar bin Sultan Al Saud', title: 'Chairman, Saudi Esports Federation & Vice Chairman, Savvy Games Group' },
+                { name: 'Mr. Brian Ward', title: 'Group CEO, Savvy Games Group' },
+                { name: 'Mr. Majid Mufti', title: 'CEO, NEOM Investment Fund (NIF)' },
+                { name: 'Mr. Vishal Wanchoo', title: 'CEO, OXAGON' },
+                { name: 'Mr. Joseph Bradley', title: 'CEO, TONOMUS' },
+                { name: 'Mr. Michael Lynch', title: 'Acting Sector Head for Media, Entertainment & Culture, NEOM' },
+                { name: 'Mr. Toby Evan-Jones', title: 'Executive Director and Head of Gaming, NEOM Media' },
+                { name: 'Mr. Mishary Alibraheem', title: 'Head of Entertainment & Sports Investments, MENA, PIF' },
+                { name: 'Mr. Omar Najjar', title: 'Chief Programs Officer, MISK Foundation' }
+            ];
 
             // --- Element Selection ---
-            const proceedButton = document.getElementById('proceedButton' );
+            const recipientListContainer = document.getElementById('recipient-list');
+            const proceedButton = document.getElementById('proceedButton');
             const antechamber = document.getElementById('antechamber');
             const briefingRoom = document.getElementById('briefingRoom');
             const pdfLink = document.getElementById('pdfLink');
             const whatsappLink = document.getElementById('whatsappLink');
 
-            // --- Link Assignment ---
+            // --- Dynamic Content Population ---
+            let recipientHTML = '';
+            recipients.forEach(r => {
+                recipientHTML += `<div class="recipient"><div class="name">${r.name}</div><div class="title">${r.title}</div></div>`;
+            });
+            recipientListContainer.innerHTML = recipientHTML;
+
             pdfLink.href = pdfLinkUrl;
             whatsappLink.href = whatsappLinkUrl;
 
@@ -547,8 +593,8 @@ Strategic Innovation Architect</p>
                         briefingRoom.style.display = 'block';
                         setTimeout(() => {
                             briefingRoom.style.opacity = '1';
-                        }, 50); // Small delay to trigger transition
-                    }, 500); // Matches CSS transition duration
+                        }, 50);
+                    }, 500);
                 } else if (enteredPassword !== null) {
                     alert('Access Denied. The passphrase provided is incorrect.');
                 }
@@ -572,3 +618,4 @@ Strategic Innovation Architect</p>
     </script>
 </body>
 </html>
+```
