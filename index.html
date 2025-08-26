@@ -4,17 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cohesion Holdings | A Strategic Partnership Proposal</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        /* --- FONTS & BASIC SETUP --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+        /* --- FONT IMPORT (TT Norms Pro ) & BASIC SETUP --- */
+        @font-face {
+            font-family: 'TT Norms Pro';
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Regular.woff2' ) format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Norms Pro';
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Medium.woff2' ) format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'TT Norms Pro';
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Bold.woff2' ) format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
 
         :root {
-            --bg-color: #0a0a0a;
-            --card-color: #141414;
-            --font-color: #e0e0e0;
-            --primary-accent: #007aff; /* A strategic, modern blue */
-            --secondary-accent: #4a4a4a;
-            --font-family: 'Inter', sans-serif;
+            --bg-color: #f8f9fa; /* Light Mode Background */
+            --font-color: #212529; /* Light Mode Font */
+            --card-color: #ffffff;
+            --border-color: #dee2e6;
+            
+            --primary-accent: #005A9C; /* A deeper, more corporate blue */
+            --secondary-accent: #6c757d; /* A subtle grey for secondary text */
+            
+            --font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         * {
@@ -31,9 +55,10 @@
             font-family: var(--font-family);
             background-color: var(--bg-color);
             color: var(--font-color);
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* --- ANTECHAMBER (LANDING SCREEN) --- */
@@ -49,43 +74,48 @@
 
         .logo {
             position: absolute;
-            top: 2rem;
-            left: 2rem;
+            top: 2.5rem;
+            left: 2.5rem;
             font-weight: 500;
-            letter-spacing: 1px;
+            font-size: 1.2rem;
             color: var(--secondary-accent);
         }
 
         .invitation-card {
             background-color: var(--card-color);
-            border: 1px solid var(--secondary-accent);
-            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
             padding: 3rem 4rem;
-            max-width: 800px;
+            max-width: 850px;
             width: 100%;
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
 
         .invitation-card h2 {
-            font-weight: 300;
-            font-size: 1.1rem;
+            font-weight: 500;
+            font-size: 1rem;
             color: var(--secondary-accent);
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .invitation-card p {
             font-weight: 400;
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             padding-left: 1rem;
+            border-left: 2px solid var(--border-color);
         }
 
         .invitation-card .subject {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             padding-left: 0;
-            font-size: 1.2rem;
+            border-left: none;
+            font-size: 1.3rem;
             font-weight: 500;
+            color: var(--primary-accent);
         }
 
         .proceed-btn {
@@ -99,13 +129,13 @@
             font-weight: 500;
             cursor: pointer;
             text-decoration: none;
-            margin-top: 2.5rem;
+            margin-top: 3rem;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
         .proceed-btn:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
+            background-color: #004170;
+            transform: translateY(-3px);
         }
 
         /* --- BRIEFING ROOM (MAIN CONTENT) --- */
@@ -115,36 +145,31 @@
             transition: opacity 0.8s ease-in;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
         }
 
         .section {
-            margin-bottom: 6rem;
-            border-bottom: 1px solid var(--secondary-accent);
-            padding-bottom: 4rem;
-        }
-        .section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+            margin-bottom: 7rem;
         }
 
         .section-headline {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             line-height: 1.2;
             max-width: 900px;
+            letter-spacing: -1px;
         }
 
         .section-text {
-            font-size: 1.1rem;
-            font-weight: 300;
+            font-size: 1.2rem;
+            font-weight: 400;
             max-width: 850px;
-            color: #b0b0b0;
+            color: #555;
         }
         
         .section-subheadline {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 500;
             margin-bottom: 2.5rem;
             color: var(--font-color);
@@ -152,87 +177,84 @@
 
         /* --- Section Specific Styles --- */
         
-        /* Interlock Grid */
         .interlock-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .interlock-card {
             background-color: var(--card-color);
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid #2a2a2a;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .interlock-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
         .interlock-card h3 {
             color: var(--primary-accent);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 500;
             margin-bottom: 1rem;
         }
 
         .interlock-card p {
-            font-size: 0.95rem;
-            color: #b0b0b0;
+            font-size: 1rem;
+            color: #555;
         }
 
-        /* IP & Engine Section */
         .dual-strategy-container {
-            display: flex;
-            gap: 3rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
         }
-        .dual-strategy-container > div {
-            flex: 1;
-            min-width: 300px;
-        }
-
+        
         .flywheel-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
 
         .flywheel-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            background-color: #1a1a1a;
+            background-color: #f1f3f5;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 12px;
         }
 
         .flywheel-item svg {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             flex-shrink: 0;
             color: var(--primary-accent);
         }
 
-        /* Execution Blueprint Section (Tabs) */
         .tabs-container {
             display: flex;
-            border-bottom: 1px solid var(--secondary-accent);
-            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2.5rem;
         }
         .tab {
-            padding: 1rem 1.5rem;
+            padding: 1rem 0;
+            margin-right: 2.5rem;
             cursor: pointer;
             font-weight: 500;
+            font-size: 1.1rem;
+            color: var(--secondary-accent);
             border-bottom: 3px solid transparent;
             transition: all 0.3s ease;
         }
         .tab:hover {
-            color: #fff;
+            color: var(--primary-accent);
         }
         .tab.active {
             color: var(--primary-accent);
@@ -240,67 +262,70 @@
         }
         .tab-content {
             display: none;
+            animation: fadeIn 0.5s;
         }
         .tab-content.active {
             display: block;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-        /* Timeline Section */
         .timeline {
             position: relative;
             max-width: 800px;
-            margin: 2rem 0;
+            margin: 3rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--border-color);
         }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--secondary-accent);
-            top: 0;
-            bottom: 0;
-            left: 0;
-        }
+        
         .timeline-item {
-            padding: 10px 40px;
+            margin-bottom: 2.5rem;
             position: relative;
-            width: 100%;
         }
-        .timeline-item::after {
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-item::before {
             content: '';
             position: absolute;
-            width: 15px;
-            height: 15px;
+            width: 18px;
+            height: 18px;
             background-color: var(--bg-color);
-            border: 3px solid var(--primary-accent);
-            top: 15px;
-            left: -8px;
+            border: 4px solid var(--primary-accent);
+            top: 5px;
+            left: -3.1rem;
             border-radius: 50%;
             z-index: 1;
         }
         .timeline-item h4 {
             font-weight: 500;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         .timeline-item p {
-            color: #b0b0b0;
-            font-size: 0.95rem;
+            color: #555;
+            font-size: 1rem;
         }
 
-        /* Final Buttons */
         .cta-buttons {
-            margin-top: 2rem;
+            margin-top: 3rem;
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
         .cta-btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 1rem;
             transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
         .cta-btn.primary {
             background-color: var(--primary-accent);
@@ -308,12 +333,16 @@
         }
         .cta-btn.secondary {
             background-color: transparent;
-            border: 1px solid var(--secondary-accent);
-            color: var(--font-color);
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
         }
         .cta-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 90, 156, 0.2);
+        }
+        .cta-btn.secondary:hover {
+            background-color: var(--primary-accent);
+            color: #fff;
         }
 
         /* Responsive Design */
@@ -322,10 +351,13 @@
                 padding: 2rem;
             }
             #briefingRoom {
-                padding: 4rem 1rem;
+                padding: 4rem 1.5rem;
             }
             .section-headline {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            .dual-strategy-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -339,20 +371,29 @@
         <div class="invitation-card">
             <h2>To:</h2>
             <p>
-                HRH Prince Faisal bin Bandar bin Sultan Al Saud<br>
-                Mr. Brian Ward<br>
-                Mr. Majid Mufti<br>
-                Mr. Vishal Wanchoo<br>
-                Mr. Joseph Bradley<br>
-                Mr. Michael Lynch<br>
-                Mr. Toby Evan-Jones<br>
-                Mr. Mishary Alibraheem<br>
+                HRH Prince Faisal bin Bandar bin Sultan Al Saud  
+
+                Mr. Brian Ward  
+
+                Mr. Majid Mufti  
+
+                Mr. Vishal Wanchoo  
+
+                Mr. Joseph Bradley  
+
+                Mr. Michael Lynch  
+
+                Mr. Toby Evan-Jones  
+
+                Mr. Mishary Alibraheem  
+
                 Mr. Omar Najjar
             </p>
             <h2>From:</h2>
-            <p>Hamad F. Alotaibi<br>Strategic Innovation Architect</p>
+            <p>Hamad F. Alotaibi  
+Strategic Innovation Architect</p>
             <h2 class="subject">Subject:</h2>
-            <p class="subject">A Strategic Partnership Proposal to Co-Architect a Sovereign Digital Ecosystem</p>
+            <p class="subject" style="border:none; padding-left:0;">A Strategic Partnership Proposal to Co-Architect a Sovereign Digital Ecosystem</p>
             
             <button id="proceedButton" class="proceed-btn">Proceed to Secure Briefing</button>
         </div>
@@ -365,7 +406,7 @@
             <p class="section-text">
                 <b>The Vision:</b> This proposal outlines a unique opportunity to develop THEE OASIS, a cohesive, multi-sector digital ecosystem designed to be a strategic force multiplier for the mandates of the Public Investment Fund, NEOM, and the MISK Foundation. It is a sovereign platform built on a "Play, Learn, Earn, Invest" flywheel, designed to empower Saudi youth and transform them from digital consumers into the creators and innovators who will power the next generation of the Kingdom's economy.
             </p>
-            <p class="section-text" style="margin-top: 1rem;">
+            <p class="section-text" style="margin-top: 1.5rem;">
                 <b>The Market:</b> With 60% of the GCC population under 30 and a 95%+ smartphone penetration, the region is a prime market for the culturally-authentic digital content and economic opportunities our platform provides.
             </p>
         </section>
@@ -397,10 +438,10 @@
             <div class="dual-strategy-container">
                 <div>
                     <h3 class="section-subheadline">Part A: The IP</h3>
-                    <p class="section-text" style="margin-bottom:1rem;">We will launch with two flagship titles designed for maximum market reach:</p>
-                    <ul class="section-text" style="list-style-position: inside;">
-                        <li><b>The GCC Blockchain Quest:</b> A collaborative, competitive game targeting the young male audience with themes of technology and regional unity.</li>
-                        <li style="margin-top:0.5rem;"><b>Princess Aliyah Series:</b> A family-friendly, narrative-driven adventure that introduces our revolutionary "Asymmetric Guardian" gameplay, fostering unity and collective purpose.</li>
+                    <p class="section-text" style="margin-bottom:1.5rem;">We will launch with two flagship titles designed for maximum market reach:</p>
+                    <ul class="section-text" style="list-style-type: none; padding-left: 0;">
+                        <li style="margin-bottom: 1rem;"><b>The GCC Blockchain Quest:</b> A collaborative, competitive game targeting the young male audience with themes of technology and regional unity.</li>
+                        <li><b>Princess Aliyah Series:</b> A family-friendly, narrative-driven adventure that introduces our revolutionary "Asymmetric Guardian" gameplay, fostering unity and collective purpose.</li>
                     </ul>
                 </div>
                  <div>
@@ -430,7 +471,7 @@
         <section class="section">
             <h2 class="section-headline">A Meticulously Planned, De-Risked Path to Execution.</h2>
             <div class="tabs-container">
-                <div class="tab active" onclick="openTab(event, 'Structure')">The Structure</div>
+                <div class="tab active" onclick="openTab(event, 'Structure' )">The Structure</div>
                 <div class="tab" onclick="openTab(event, 'Process')">The Process</div>
                 <div class="tab" onclick="openTab(event, 'Technology')">The Technology</div>
             </div>
@@ -468,8 +509,8 @@
                 The immense potential of this project lies in its interconnectedness. We therefore respectfully propose a joint strategic meeting to explore these powerful cross-portfolio synergies. We are ready for immediate engagement and can travel to the Kingdom to facilitate the next steps.
             </p>
             <div class="cta-buttons">
-                <a href="#" class="cta-btn primary">[ Access Full Confidential Proposal (PDF) ]</a>
-                <a href="#" class="cta-btn secondary">[ Schedule a Direct Call via WhatsApp ]</a>
+                <a id="pdfLink" href="#" class="cta-btn primary"><i class="fas fa-file-pdf"></i> Access Full Proposal (PDF)</a>
+                <a id="whatsappLink" href="#" class="cta-btn secondary"><i class="fab fa-whatsapp"></i> Schedule a Direct Call</a>
             </div>
         </section>
 
@@ -481,18 +522,19 @@
             // --- Configuration ---
             // IMPORTANT: Change the password and links below.
             const accessPassword = 'Vision2030'; // <-- CHANGE THIS PASSWORD
-            const pdfLink = '#'; // <-- ADD PDF LINK HERE
-            const whatsappLink = '#'; // <-- ADD WHATSAPP LINK HERE (e.g., 'https://wa.me/966000000000')
+            const pdfLinkUrl = 'https://cohesion-h.github.io/index/Strategic%20Partnership%20Proposal_%20Digital%20Innovation%20Ecosystem%204.pdf'; // <-- PASTE YOUR PDF LINK HERE
+            const whatsappLinkUrl = 'https://wa.me/96551179990'; // <-- PASTE YOUR WHATSAPP LINK HERE
 
             // --- Element Selection ---
-            const proceedButton = document.getElementById('proceedButton');
+            const proceedButton = document.getElementById('proceedButton' );
             const antechamber = document.getElementById('antechamber');
             const briefingRoom = document.getElementById('briefingRoom');
-            const ctaButtons = document.querySelectorAll('.cta-btn');
+            const pdfLink = document.getElementById('pdfLink');
+            const whatsappLink = document.getElementById('whatsappLink');
 
             // --- Link Assignment ---
-            ctaButtons[0].href = pdfLink;
-            ctaButtons[1].href = whatsappLink;
+            pdfLink.href = pdfLinkUrl;
+            whatsappLink.href = whatsappLinkUrl;
 
             // --- Password Protection Logic ---
             proceedButton.addEventListener('click', function() {
