@@ -1,73 +1,23 @@
-Of course. I understand perfectly. You want to make two critical refinements to achieve the final, perfect level of sophistication:
-
-1.  **Format the Recipient List:** The names and titles on the invitation card must be formatted exactly like your screenshot, with the title appearing directly beneath each name. This is a crucial detail for showing respect and professionalism.
-2.  **Refine the Accent Color:** You want to replace the blue with a more understated, luxurious, and sophisticated color that feels modern and high-end.
-
-I agree completely. These changes will elevate the design significantly.
-
-### **The Color Refinement**
-
-Instead of the standard corporate blue, I suggest a **deep, strategic teal-green**. This color is associated with wisdom, innovation, and balanced growth. It is sophisticated, unique, and looks exceptional in both light and dark modes.
-
-*   **New Accent Color:** `#008080` (A deep, elegant teal)
-
-### **The Code Adjustments**
-
-I have modified the code to implement these two changes.
-
-1.  I have restructured the HTML for the recipient list to match your screenshot's format.
-2.  I have replaced the old blue accent color (`--primary-accent`) with the new sophisticated teal (`#008080`) in the CSS.
-
----
-
-### **The Final, Definitive HTML Code**
-
-This is the complete, standalone `index.html` file with your requested refinements. Replace your old code entirely with this new version.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cohesion Holdings | A Strategic Partnership Proposal</title>
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <title>Strategic Partnership Proposal - Cohesion Holdings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* --- FONT IMPORT (TT Norms Pro) & BASIC SETUP --- */
-        @font-face {
-            font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'TT Norms Pro';
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/ttnorms-pro/TTNormsPro-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-        }
-
         :root {
-            --bg-color: #f8f9fa;
-            --font-color: #212529;
-            --card-color: #ffffff;
-            --border-color: #dee2e6;
-            
-            /* REFINED ACCENT COLOR */
-            --primary-accent: #008080; /* Deep, sophisticated teal */
-            --primary-accent-hover: #006666; /* Darker shade for hover */
-
-            --secondary-accent: #6c757d;
-            --font-family: 'TT Norms Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --primary-blue: #0f172a;
+            --accent-blue: #1e40af;
+            --gold: #f59e0b;
+            --light-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --gradient: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
         }
 
         * {
@@ -76,546 +26,863 @@ This is the complete, standalone `index.html` file with your requested refinemen
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--font-color);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            overflow-x: hidden;
         }
 
-        /* --- ANTECHAMBER (LANDING SCREEN) --- */
-        #antechamber {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .logo {
-            position: absolute;
-            top: 2.5rem;
-            left: 2.5rem;
-            font-weight: 500;
-            font-size: 1.2rem;
-            color: var(--secondary-accent);
-        }
-
-        .invitation-card {
-            background-color: var(--card-color);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 3rem 4rem;
-            max-width: 850px;
+        /* Password Screen */
+        .password-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            text-align: left;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            height: 100vh;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         }
 
-        .invitation-card h2 {
-            font-weight: 500;
+        .password-container {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: slideUp 0.6s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-section {
+            margin-bottom: 2rem;
+        }
+
+        .logo-section h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo-section p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
             font-size: 1rem;
-            color: var(--secondary-accent);
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        /* REFINED RECIPIENT STYLING */
-        .recipient {
-            margin-bottom: 1.25rem;
-        }
-        .recipient .name {
-            font-weight: 500;
-            font-size: 1.1rem;
-            color: var(--font-color);
-        }
-        .recipient .title {
-            font-weight: 400;
-            font-size: 1rem;
-            color: var(--secondary-accent);
+            transition: border-color 0.3s ease;
         }
 
-
-        .invitation-card .subject-section {
-            margin-top: 2.5rem;
-        }
-        
-        .invitation-card .subject-text {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--primary-accent);
+        .password-input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
         }
 
-        .proceed-btn {
-            display: inline-block;
-            background-color: var(--primary-accent);
-            color: #fff;
-            padding: 1rem 2.5rem;
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            color: var(--white);
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 1rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            text-decoration: none;
-            margin-top: 3rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: transform 0.2s ease;
         }
 
-        .proceed-btn:hover {
-            background-color: var(--primary-accent-hover);
-            transform: translateY(-3px);
+        .submit-btn:hover {
+            transform: translateY(-2px);
         }
 
-        /* --- BRIEFING ROOM (MAIN CONTENT) --- */
-        #briefingRoom {
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Main Content */
+        .main-content {
             display: none;
             opacity: 0;
-            transition: opacity 0.8s ease-in;
-            max-width: 1100px;
+            transition: opacity 0.5s ease;
+        }
+
+        .main-content.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 8rem 2rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .section {
-            margin-bottom: 7rem;
-        }
-
-        .section-headline {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            line-height: 1.2;
-            max-width: 900px;
-            letter-spacing: -1px;
-        }
-
-        .section-text {
+        .nav-logo {
             font-size: 1.2rem;
-            font-weight: 400;
-            max-width: 850px;
-            color: #555;
-        }
-        
-        .section-subheadline {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 2.5rem;
-            color: var(--font-color);
+            font-weight: 700;
+            color: var(--primary-blue);
         }
 
-        /* --- Section Specific Styles --- */
-        
-        .interlock-grid {
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gold);
+            color: var(--primary-blue);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Cards */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .interlock-card {
-            background-color: var(--card-color);
+        .card {
+            background: var(--white);
             padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 64, 175, 0.1);
         }
 
-        .interlock-card:hover {
+        .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
         }
 
-        .interlock-card h3 {
-            color: var(--primary-accent);
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon i {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .card h3 {
             font-size: 1.3rem;
-            font-weight: 500;
+            font-weight: 600;
+            color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
-        .interlock-card p {
-            font-size: 1rem;
-            color: #555;
+        .card p {
+            color: var(--text-light);
+            line-height: 1.7;
         }
 
-        .dual-strategy-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-        
-        .flywheel-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
+        /* Platform Section */
+        .platform-showcase {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow);
         }
 
-        .flywheel-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: #f1f3f5;
+        .platform-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            color: var(--white);
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Characters Section */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .character-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: scale(1.05);
+        }
+
+        .character-header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .character-body {
+            padding: 1.5rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--gradient);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat {
             padding: 1rem;
-            border-radius: 12px;
         }
 
-        .flywheel-item svg {
-            width: 28px;
-            height: 28px;
-            flex-shrink: 0;
-            color: var(--primary-accent);
-        }
-
-        .tabs-container {
-            display: flex;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 2.5rem;
-        }
-        .tab {
-            padding: 1rem 0;
-            margin-right: 2.5rem;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 1.1rem;
-            color: var(--secondary-accent);
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-        .tab:hover {
-            color: var(--primary-accent);
-        }
-        .tab.active {
-            color: var(--primary-accent);
-            border-bottom-color: var(--primary-accent);
-        }
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-        .tab-content.active {
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
             display: block;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
         }
 
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 3rem 0;
-            padding-left: 2rem;
-            border-left: 3px solid var(--border-color);
-        }
-        
-        .timeline-item {
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 18px;
-            height: 18px;
-            background-color: var(--bg-color);
-            border: 4px solid var(--primary-accent);
-            top: 5px;
-            left: -3.1rem;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .timeline-item h4 {
-            font-weight: 500;
-            font-size: 1.3rem;
-        }
-        .timeline-item p {
-            color: #555;
-            font-size: 1rem;
+        /* Contact Section */
+        .contact {
+            background: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
         }
 
-        .cta-buttons {
-            margin-top: 3rem;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .cta-btn {
+        .whatsapp-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
+            background: #25d366;
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
+            font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            margin-top: 2rem;
         }
-        .cta-btn.primary {
-            background-color: var(--primary-accent);
-            color: #fff;
-        }
-        .cta-btn.secondary {
-            background-color: transparent;
-            border-color: var(--primary-accent);
-            color: var(--primary-accent);
-        }
-        .cta-btn:hover {
+
+        .whatsapp-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 128, 128, 0.2);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
         }
-        .cta-btn.secondary:hover {
-            background-color: var(--primary-accent);
-            color: #fff;
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .invitation-card {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .password-container {
                 padding: 2rem;
             }
-            #briefingRoom {
-                padding: 4rem 1.5rem;
+
+            .hero {
+                padding-top: 6rem;
             }
-            .section-headline {
-                font-size: 2.2rem;
+
+            .section {
+                padding: 3rem 0;
             }
-            .dual-strategy-container {
+
+            .cards-grid {
                 grid-template-columns: 1fr;
             }
+
+            .platform-showcase {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-
-    <div id="antechamber">
-        <div class="logo">
-            Cohesion Holdings
-        </div>
-        <div class="invitation-card">
-            <h2>To:</h2>
-            <div id="recipient-list">
-                <!-- Recipient list will be dynamically inserted here by JavaScript -->
+    <!-- Password Screen -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-container">
+            <div class="logo-section">
+                <h1>Cohesion Holdings</h1>
+                <p>Strategic Partnership Proposal</p>
             </div>
-            
-            <h2 style="margin-top: 2rem;">From:</h2>
-            <div class="recipient">
-                <div class="name">Hamad F. Alotaibi</div>
-                <div class="title">Strategic Innovation Architect</div>
-            </div>
-
-            <div class="subject-section">
-                <h2>Subject:</h2>
-                <div class="subject-text">A Strategic Partnership Proposal to Co-Architect a Sovereign Digital Ecosystem</div>
-            </div>
-            
-            <button id="proceedButton" class="proceed-btn">Proceed to Secure Briefing</button>
+            <form id="passwordForm">
+                <input 
+                    type="password" 
+                    class="password-input" 
+                    id="passwordInput" 
+                    placeholder="Enter access code"
+                    required
+                >
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span id="btnText">Access Proposal</span>
+                    <span id="btnLoading" class="loading" style="display: none;"></span>
+                </button>
+                <div class="error-message" id="errorMessage">
+                    Invalid access code. Please try again.
+                </div>
+            </form>
         </div>
     </div>
 
-    <main id="briefingRoom">
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-logo">Cohesion Holdings</div>
+                <ul class="nav-menu">
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#platform">Platform</a></li>
+                    <li><a href="#characters">Universe</a></li>
+                    <li><a href="#partnership">Partnership</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </header>
 
-        <section class="section">
-            <h1 class="section-headline">An Invitation to Co-Architect a Foundational Piece of Digital Infrastructure for the Kingdom.</h1>
-            <p class="section-text">
-                <b>The Vision:</b> This proposal outlines a unique opportunity to develop THEE OASIS, a cohesive, multi-sector digital ecosystem designed to be a strategic force multiplier for the mandates of the Public Investment Fund, NEOM, and the MISK Foundation. It is a sovereign platform built on a "Play, Learn, Earn, Invest" flywheel, designed to empower Saudi youth and transform them from digital consumers into the creators and innovators who will power the next generation of the Kingdom's economy.
-            </p>
-            <p class="section-text" style="margin-top: 1.5rem;">
-                <b>The Market:</b> With 60% of the GCC population under 30 and a 95%+ smartphone penetration, the region is a prime market for the culturally-authentic digital content and economic opportunities our platform provides.
-            </p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Accelerating Vision 2030 Through Digital Innovation</h1>
+                <p class="hero-subtitle">
+                    A comprehensive digital ecosystem that transforms passive learning into immersive experiences, 
+                    empowering GCC youth while creating sustainable economic opportunities and cultural impact.
+                </p>
+                <a href="#vision" class="cta-primary">
+                    <i class="fas fa-rocket"></i>
+                    Explore Our Vision
+                </a>
+            </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-headline">A Unified Solution That Connects Sovereign Investments into a Single, Powerful Engine.</h2>
-            <div class="interlock-grid">
-                <div class="interlock-card">
-                    <h3>For PIF & Savvy Games Group</h3>
-                    <p>We provide the culturally-authentic IP and gameplay that fulfills Savvy's content mandate. Our platform turns players into creators, adding a powerful economic layer to your gaming investments and creating a new, exportable class of Saudi cultural products.</p>
-                </div>
-                <div class="interlock-card">
-                    <h3>For NEOM Media Village</h3>
-                    <p>We become the anchor content creator, producing the first "Made in NEOM" games and experiences. This immediately activates your infrastructure, attracts global talent, and provides a stunning proof-of-concept for the world.</p>
-                </div>
-                <div class="interlock-card">
-                    <h3>For OXAGON & TONOMUS</h3>
-                    <p>Our platform serves as the city-scale Digital Twin and innovation testbed for NEOM. It provides the critical 'Physical-Digital Bridge' for Oxagon's manufacturing and the flagship 'Cognitive Application' for TONOMUS's AI infrastructure.</p>
-                </div>
-                <div class="interlock-card">
-                    <h3>For MISK Foundation</h3>
-                    <p>We transform your educational programs into immersive, AI-driven experiences that accelerate skill development. THEE OASIS serves as a digital twin for talent development, creating measurable pathways from learning to entrepreneurship.</p>
+        <!-- Vision Section -->
+        <section id="vision" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Strategic Value Proposition</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    We provide the operational engine to transform sovereign investments into tangible outcomes: 
+                    job creation, youth empowerment, and global cultural leadership.
+                </p>
+                
+                <div class="cards-grid">
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>For MISK Foundation</h3>
+                        <p>Transform educational programs into immersive, AI-driven experiences that accelerate skill development. THEE OASIS serves as a digital twin for talent development, creating measurable pathways from learning to entrepreneurship.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>For PIF & Savvy Games Group</h3>
+                        <p>Deliver culturally-authentic IP and gameplay that fulfills content mandates while adding an economic layer. Our platform turns players into creators, generating exportable Saudi cultural products.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>For NEOM Media Village</h3>
+                        <p>Become the anchor content creator, producing the first "Made in NEOM" games and experiences. This immediately activates your infrastructure and attracts global talent.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-headline">A Dual-Strategy Content Pipeline Driving a Self-Sustaining Economy.</h2>
-            <div class="dual-strategy-container">
-                <div>
-                    <h3 class="section-subheadline">Part A: The IP</h3>
-                    <p class="section-text" style="margin-bottom:1.5rem;">We will launch with two flagship titles designed for maximum market reach:</p>
-                    <ul class="section-text" style="list-style-type: none; padding-left: 0;">
-                        <li style="margin-bottom: 1rem;"><b>The GCC Blockchain Quest:</b> A collaborative, competitive game targeting the young male audience with themes of technology and regional unity.</li>
-                        <li><b>Princess Aliyah Series:</b> A family-friendly, narrative-driven adventure that introduces our revolutionary "Asymmetric Guardian" gameplay, fostering unity and collective purpose.</li>
-                    </ul>
+        <!-- Platform Section -->
+        <section id="platform" class="section" style="background: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">THEE OASIS Platform</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    A revolutionary virtual ecosystem that merges education, entertainment, and economic opportunity
+                </p>
+                
+                <div class="platform-showcase animate-on-scroll">
+                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">Four Pillars of Development</h3>
+                    <div class="platform-features">
+                        <div class="feature">
+                            <div class="feature-number">1</div>
+                            <h4>Emotional Intelligence</h4>
+                            <p>Character-driven narratives that develop empathy, cultural understanding, and social skills</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">2</div>
+                            <h4>Financial Literacy</h4>
+                            <p>Virtual marketplace and investment tools teaching wealth building and economic participation</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">3</div>
+                            <h4>Technology Literacy</h4>
+                            <p>AI collaboration tools and digital creation platforms preparing youth for the future economy</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">4</div>
+                            <h4>Cultural Intelligence</h4>
+                            <p>Heritage preservation and GCC unity through authentic storytelling and shared experiences</p>
+                        </div>
+                    </div>
                 </div>
-                 <div>
-                    <h3 class="section-subheadline">Part B: The Economic Journey</h3>
-                    <div class="flywheel-grid">
-                        <div class="flywheel-item">
-                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12M3.75 3v9h9M20.25 12M20.25 21v-9h-9M12 3.75h9v9M12 20.25h9v-9" /></svg>
-                            <div><b>Play:</b> Engage with world-class games.</div>
+
+                <div class="cards-grid">
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-store"></i>
                         </div>
-                        <div class="flywheel-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" /></svg>
-                            <div><b>Learn:</b> Gain practical skills in design, finance, and technology.</div>
+                        <h3>Creator Economy</h3>
+                        <p>Users design digital and physical products, connecting directly with Saudi factories for global distribution. Average user potential: $600+ monthly revenue.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <div class="flywheel-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" /></svg>
-                            <div><b>Earn:</b> Monetize creations and create new export opportunities.</div>
+                        <h3>AI-Driven Learning</h3>
+                        <p>Personalized educational experiences that adapt to individual learning styles and cultural contexts, ensuring maximum engagement and retention.</p>
+                    </div>
+                    
+                    <div class="card animate-on-scroll">
+                        <div class="card-icon">
+                            <i class="fas fa-globe"></i>
                         </div>
-                        <div class="flywheel-item">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" /></svg>
-                            <div><b>Invest:</b> Build long-term wealth via integrated financial literacy.</div>
+                        <h3>Virtual Tourism</h3>
+                        <p>Immersive experiences showcasing Saudi heritage and modern attractions, driving real-world tourism and cultural appreciation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Character Universe</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Culturally authentic ambassadors representing GCC values and aspirations
+                </p>
+                
+                <div class="characters-grid">
+                    <div class="character-card animate-on-scroll">
+                        <div class="character-header">
+                            <h3>Faris & Jude</h3>
+                            <p>Saudi Arabia Representatives</p>
+                        </div>
+                        <div class="character-body">
+                            <p><strong>Faris:</strong> The Environmental Knight, championing clean energy and sustainability initiatives.</p>
+                            <p><strong>Jude:</strong> The Cultural Ambassador, showcasing Saudi hospitality and tourism innovation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card animate-on-scroll">
+                        <div class="character-header">
+                            <h3>Adnan & Noura</h3>
+                            <p>Kuwait Representatives</p>
+                        </div>
+                        <div class="character-body">
+                            <p><strong>Adnan:</strong> Environmental guardian focused on wildlife protection and conservation.</p>
+                            <p><strong>Noura:</strong> Sustainability advocate promoting renewable energy and eco-friendly solutions.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-headline">A Meticulously Planned, De-Risked Path to Execution.</h2>
-            <div class="tabs-container">
-                <div class="tab active" onclick="openTab(event, 'Structure')">The Structure</div>
-                <div class="tab" onclick="openTab(event, 'Process')">The Process</div>
-                <div class="tab" onclick="openTab(event, 'Technology')">The Technology</div>
-            </div>
-
-            <div id="Structure" class="tab-content active">
-                <p class="section-text">We propose a multi-entity legal structure to protect all partners. A Kuwait-based holding company, Cohesion Holdings, will license the core IP to a new Saudi-based Joint Venture. This allows for direct investment into the Saudi operational company while securing the foundational intellectual property.</p>
-            </div>
-
-            <div id="Process" class="tab-content">
-                <p class="section-text">Our development is not linear; it is a parallel process. We will simultaneously develop the core platform infrastructure, the flagship game titles, and the educational modules. This is achieved by orchestrating multiple specialized "pods"—boutique studios for game dev, platform infrastructure, and animation—under a single, unified creative vision.</p>
-            </div>
-
-            <div id="Technology" class="tab-content">
-                <p class="section-text">We will leverage a cutting-edge tech stack, including NVIDIA Omniverse for collaborative digital twin and avatar creation, and Unreal Engine 5 for world-building, ensuring the highest fidelity and most efficient workflow.</p>
+        <!-- Stats Section -->
+        <section class="section stats">
+            <div class="container">
+                <h2 class="section-title" style="color: var(--white);">Impact Projections</h2>
+                <div class="stats-grid">
+                    <div class="stat animate-on-scroll">
+                        <span class="stat-number">10,000+</span>
+                        <div class="stat-label">Jobs Created</div>
+                    </div>
+                    <div class="stat animate-on-scroll">
+                        <span class="stat-number">1M+</span>
+                        <div class="stat-label">Users Reached</div>
+                    </div>
+                    <div class="stat animate-on-scroll">
+                        <span class="stat-number">$2.75B</span>
+                        <div class="stat-label">Revenue Potential</div>
+                    </div>
+                    <div class="stat animate-on-scroll">
+                        <span class="stat-number">13</span>
+                        <div class="stat-label">Platform Portals</div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="section-headline">Proposed Partnership Path.</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Phase 1: Foundation (Months 1-6)</h4>
-                    <p>Formalize the Joint Venture and IP licensing. Assemble the core leadership team. Begin the proof-of-concept development. Key Deliverable: A playable game demo and a full technical blueprint.</p>
+        <!-- Partnership Section -->
+        <section id="partnership" class="section" style="background: var(--light-bg);">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Partnership Opportunity</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Join us in creating the digital infrastructure that will define the next generation of Saudi cultural and economic influence
+                </p>
+                
+                <div class="platform-showcase animate-on-scroll">
+                    <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">Exclusive Saudi Vision Portal</h3>
+                    <p style="text-align: center; margin-bottom: 2rem; color: var(--text-light);">
+                        50% partnership opportunity in a flagship digital destination showcasing Kingdom innovation, 
+                        driving tourism bookings, and serving as a gateway to Saudi cultural experiences.
+                    </p>
+                    
+                    <div class="platform-features">
+                        <div class="feature">
+                            <div class="feature-number">🏛️</div>
+                            <h4>Cultural Showcase</h4>
+                            <p>Virtual experiences of Saudi heritage sites and modern attractions</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">✈️</div>
+                            <h4>Tourism Integration</h4>
+                            <p>Direct booking platform for flights, hotels, and experiences</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">🎮</div>
+                            <h4>Gaming Hub</h4>
+                            <p>Flagship games featuring Saudi characters and storylines</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-number">💼</div>
+                            <h4>Business Portal</h4>
+                            <p>Investment opportunities and startup showcase platform</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-item">
-                    <h4>Phase 2: Development (Months 7-18)</h4>
-                    <p>Full-scale production of the platform and flagship game.</p>
-                </div>
-                 <div class="timeline-item">
-                    <h4>Phase 3: Launch & Scale (Months 19+)</h4>
-                    <p>Public launch, user acquisition, and international expansion.</p>
-                </div>
-            </div>
-            <p class="section-text" style="margin-top: 3rem;">
-                The immense potential of this project lies in its interconnectedness. We therefore respectfully propose a joint strategic meeting to explore these powerful cross-portfolio synergies. We are ready for immediate engagement and can travel to the Kingdom to facilitate the next steps.
-            </p>
-            <div class="cta-buttons">
-                <a id="pdfLink" href="#" target="_blank" class="cta-btn primary"><i class="fas fa-file-pdf"></i> Access Full Proposal (PDF)</a>
-                <a id="whatsappLink" href="#" target="_blank" class="cta-btn secondary"><i class="fab fa-whatsapp"></i> Schedule a Direct Call</a>
             </div>
         </section>
 
-    </main>
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title" style="color: var(--white);">Ready to Accelerate Vision 2030?</h2>
+                <p style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem;">
+                    Let's discuss how we can implement the proof-of-concept phase and demonstrate tangible value within six months.
+                </p>
+                
+                <a href="https://wa.me/96551179990?text=Hello!%20I%20accessed%20your%20strategic%20partnership%20proposal%20and%20would%20like%20to%20discuss%20collaboration%20opportunities%20for%20Vision%202030." 
+                   class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    Start Strategic Discussion
+                </a>
+                
+                <div style="margin-top: 3rem; opacity: 0.8;">
+                    <p><strong>Hamad F. Alotaibi</strong></p>
+                    <p>Strategic Innovation Architect</p>
+                    <p>+965 5117 9990</p>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Password Protection
+        const correctPassword = 'vision2030';
+        
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // --- Configuration ---
-            const accessPassword = 'Vision2030'; 
-            const pdfLinkUrl = 'https://cohesion-h.github.io/index/Strategic%20Partnership%20Proposal_%20Digital%20Innovation%20Ecosystem%204.pdf';
-            const whatsappLinkUrl = 'https://wa.me/96551179990'; 
-
-            const recipients = [
-                { name: 'HRH Prince Faisal bin Bandar bin Sultan Al Saud', title: 'Chairman, Saudi Esports Federation & Vice Chairman, Savvy Games Group' },
-                { name: 'Mr. Brian Ward', title: 'Group CEO, Savvy Games Group' },
-                { name: 'Mr. Majid Mufti', title: 'CEO, NEOM Investment Fund (NIF)' },
-                { name: 'Mr. Vishal Wanchoo', title: 'CEO, OXAGON' },
-                { name: 'Mr. Joseph Bradley', title: 'CEO, TONOMUS' },
-                { name: 'Mr. Michael Lynch', title: 'Acting Sector Head for Media, Entertainment & Culture, NEOM' },
-                { name: 'Mr. Toby Evan-Jones', title: 'Executive Director and Head of Gaming, NEOM Media' },
-                { name: 'Mr. Mishary Alibraheem', title: 'Head of Entertainment & Sports Investments, MENA, PIF' },
-                { name: 'Mr. Omar Najjar', title: 'Chief Programs Officer, MISK Foundation' }
-            ];
-
-            // --- Element Selection ---
-            const recipientListContainer = document.getElementById('recipient-list');
-            const proceedButton = document.getElementById('proceedButton');
-            const antechamber = document.getElementById('antechamber');
-            const briefingRoom = document.getElementById('briefingRoom');
-            const pdfLink = document.getElementById('pdfLink');
-            const whatsappLink = document.getElementById('whatsappLink');
-
-            // --- Dynamic Content Population ---
-            let recipientHTML = '';
-            recipients.forEach(r => {
-                recipientHTML += `<div class="recipient"><div class="name">${r.name}</div><div class="title">${r.title}</div></div>`;
-            });
-            recipientListContainer.innerHTML = recipientHTML;
-
-            pdfLink.href = pdfLinkUrl;
-            whatsappLink.href = whatsappLinkUrl;
-
-            // --- Password Protection Logic ---
-            proceedButton.addEventListener('click', function() {
-                const enteredPassword = prompt('Please enter the security passphrase:');
-                
-                if (enteredPassword === accessPassword) {
-                    antechamber.style.opacity = '0';
+            const password = document.getElementById('passwordInput').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Show loading
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                if (password === correctPassword) {
+                    document.getElementById('passwordScreen').style.opacity = '0';
                     setTimeout(() => {
-                        antechamber.style.display = 'none';
-                        briefingRoom.style.display = 'block';
-                        setTimeout(() => {
-                            briefingRoom.style.opacity = '1';
-                        }, 50);
+                        document.getElementById('passwordScreen').style.display = 'none';
+                        document.getElementById('mainContent').classList.add('show');
+                        initAnimations();
                     }, 500);
-                } else if (enteredPassword !== null) {
-                    alert('Access Denied. The passphrase provided is incorrect.');
+                } else {
+                    errorMessage.style.display = 'block';
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                    document.getElementById('passwordInput').value = '';
+                }
+            }, 1000);
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
 
-        // --- Tab Functionality ---
-        function openTab(evt, tabName) {
-            let i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tab");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+        // Scroll Animations
+        function initAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
         }
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Prevent right-click and text selection for security
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('selectstart', e => e.preventDefault());
+        document.addEventListener('dragstart', e => e.preventDefault());
     </script>
 </body>
 </html>
-```
+
