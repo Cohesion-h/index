@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #0f172a 0%, #1e40af 100% );
+            --primary-gradient: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
             --saudi-green: #006C35;
             --saudi-green-light: #00A651;
             --saudi-green-gradient: linear-gradient(135deg, #006C35 0%, #00A651 100%);
@@ -34,11 +34,6 @@
             color: var(--text-dark);
             background-color: var(--white);
             overflow-x: hidden;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
         }
 
         /* Password Screen */
@@ -59,6 +54,7 @@
         .password-screen.hide {
             opacity: 0;
             transform: scale(0.95);
+            pointer-events: none;
         }
 
         .password-container {
@@ -247,6 +243,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero::before {
@@ -256,7 +253,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.15"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a )"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/><circle cx="700" cy="800" r="120" fill="url(%23a)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.15"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="150" fill="url(%23a)"/><circle cx="800" cy="300" r="200" fill="url(%23a)"/><circle cx="400" cy="700" r="180" fill="url(%23a)"/><circle cx="700" cy="800" r="120" fill="url(%23a)"/></svg>');
             opacity: 0.4;
         }
 
@@ -274,6 +271,17 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-subtitle {
@@ -440,47 +448,59 @@
             margin-bottom: 1rem;
         }
 
-        /* --- NEW: Mind Map Section --- */
+        /* Mind Map Section */
         .mind-map-section {
             padding: 6rem 0;
             background: var(--white);
         }
+        
         .mind-map-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             margin-top: 4rem;
         }
+        
         .mind-map-card {
             background: var(--light-gray);
             padding: 2rem;
             border-radius: 20px;
         }
+        
         .mind-map-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--dark-blue);
             margin-bottom: 1rem;
         }
+        
         .mind-map-card p {
             color: var(--text-light);
             margin-bottom: 1.5rem;
         }
+        
         .mind-map-image {
             width: 100%;
+            height: 250px;
+            background: var(--primary-gradient);
             border-radius: 15px;
             box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
         }
 
-        /* --- NEW: Video Showcase Section --- */
+        /* Video Showcase Section */
         .video-showcase {
             background: var(--light-gray);
             padding: 6rem 0;
         }
+        
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             max-width: 100%;
@@ -488,17 +508,21 @@
             border-radius: 25px;
             box-shadow: var(--shadow-lg);
         }
+        
         .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            border: none;
         }
+        
         .download-button-container {
             text-align: center;
             margin-top: 3rem;
         }
+        
         .download-btn {
             display: inline-flex;
             align-items: center;
@@ -513,6 +537,7 @@
             transition: all 0.3s ease;
             box-shadow: 0 10px 30px rgba(0, 108, 53, 0.3);
         }
+        
         .download-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(0, 108, 53, 0.4);
@@ -583,6 +608,11 @@
         }
 
         /* Four Pillars */
+        .pillars-section {
+            padding: 6rem 0;
+            background: var(--light-gray);
+        }
+        
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -712,11 +742,16 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1 )" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
 
         /* Characters Section */
+        .characters-section {
+            padding: 6rem 0;
+            background: var(--white);
+        }
+        
         .characters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -922,4 +957,626 @@
         }
 
         .contact-description {
-            font-size: 1.
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--saudi-green-gradient);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 108, 53, 0.3);
+            margin: 1rem;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 108, 53, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00A651 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .platform-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .mind-map-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .missing-piece-visual {
+                grid-template-columns: 1fr;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .password-container {
+                padding: 2rem;
+            }
+            
+            .logo-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .game-header, .character-header {
+                padding: 1.5rem;
+            }
+            
+            .game-body, .character-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Password Screen -->
+    <div class="password-screen" id="passwordScreen">
+        <div class="password-container">
+            <div class="logo-section">
+                <h1>Cohesion Holdings</h1>
+                <p>Strategic Innovation Portfolio</p>
+            </div>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Enter access password" autocomplete="off">
+            <button class="submit-btn" onclick="checkPassword()">
+                <i class="fas fa-lock-open"></i> Access Portfolio
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">Cohesion Holdings</div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#vision" class="nav-link">Vision</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#platform" class="nav-link">Platform</a></li>
+                    <li><a href="#partnership" class="nav-link">Partnership</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Architecting the Future of Digital Innovation</h1>
+                <p class="hero-subtitle">A comprehensive strategic portfolio showcasing THEE OASIS—a synergistic digital ecosystem designed to accelerate Vision 2030 through immersive technology, cultural storytelling, and economic empowerment.</p>
+                <div class="hero-cta">
+                    <a href="#vision" class="cta-primary">
+                        <i class="fas fa-compass"></i> Explore Our Vision
+                    </a>
+                    <a href="#contact" class="cta-secondary">
+                        <i class="fas fa-handshake"></i> Start Partnership Discussion
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missing Piece Section -->
+        <section class="missing-piece section" id="vision">
+            <div class="container">
+                <h2 class="section-title">The Strategic Missing Piece</h2>
+                <p class="section-subtitle">Vision 2030 has launched extraordinary giga-projects. THEE OASIS is the digital catalyst that connects them into a cohesive ecosystem.</p>
+                
+                <div class="missing-piece-content">
+                    <div class="missing-piece-visual">
+                        <div class="mega-project-card">
+                            <div class="project-icon">🏗️</div>
+                            <h3 class="project-name">NEOM</h3>
+                            <p class="project-connection">Next-gen city infrastructure</p>
+                        </div>
+                        <div class="mega-project-card">
+                            <div class="project-icon">🎮</div>
+                            <h3 class="project-name">Savvy Games Group</h3>
+                            <p class="project-connection">Gaming industry investment</p>
+                        </div>
+                        <div class="mega-project-card">
+                            <div class="project-icon">🎓</div>
+                            <h3 class="project-name">MISK Foundation</h3>
+                            <p class="project-connection">Youth education & development</p>
+                        </div>
+                        <div class="mega-project-card">
+                            <div class="project-icon">🤖</div>
+                            <h3 class="project-name">SCAI</h3>
+                            <p class="project-connection">AI capabilities & research</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glue-visual">
+                        <h3>THEE OASIS: The Digital Catalyst</h3>
+                        <p>The interoperable platform that connects sovereign assets into a unified digital economy, creating exponential value across all initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mind Map Section -->
+        <section class="mind-map-section section" id="strategy">
+            <div class="container">
+                <h2 class="section-title">Strategic Architecture</h2>
+                <p class="section-subtitle">A comprehensive blueprint for digital ecosystem development aligned with Vision 2030 objectives</p>
+                
+                <div class="mind-map-grid">
+                    <div class="mind-map-card">
+                        <h3>Technical Infrastructure</h3>
+                        <p>Cloud-agnostic architecture built on cutting-edge technology stack with robust security protocols and scalable infrastructure.</p>
+                        <div class="mind-map-image">Technical Architecture Diagram</div>
+                    </div>
+                    <div class="mind-map-card">
+                        <h3>Content Ecosystem</h3>
+                        <p>Multi-tier content strategy featuring flagship IP, educational modules, and creator economy tools for sustainable growth.</p>
+                        <div class="mind-map-image">Content Development Pipeline</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Showcase Section -->
+        <section class="video-showcase section">
+            <div class="container">
+                <h2 class="section-title">Immersive Experience Preview</h2>
+                <p class="section-subtitle">A glimpse into the future of digital engagement through THEE OASIS platform capabilities</p>
+                
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/7TO56hqyavU" title="THEE OASIS Platform Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="download-button-container">
+                    <a href="#" class="download-btn">
+                        <i class="fas fa-download"></i> Download Executive Summary
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flagship Games Section -->
+        <section class="flagship-games section" id="projects">
+            <div class="container">
+                <h2 class="section-title">Flagship Initiatives</h2>
+                <p class="section-subtitle">Groundbreaking projects designed to redefine digital entertainment and education</p>
+                
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-header">
+                            <h3 class="game-title">Princess Aliyah</h3>
+                            <p class="game-subtitle">And the Cutting Edge of Glory</p>
+                        </div>
+                        <div class="game-body">
+                            <div class="game-feature">
+                                <h4>Asymmetric Guardian Gameplay</h4>
+                                <p>Players support an AI-driven heroine through environmental manipulation and strategic coordination.</p>
+                            </div>
+                            <div class="game-feature">
+                                <h4>Cultural Narrative</h4>
+                                <p>Four-season epic celebrating Saudi heritage with modern storytelling techniques.</p>
+                            </div>
+                            <div class="game-feature">
+                                <h4>Educational Integration</h4>
+                                <p>Seamlessly blends entertainment with leadership and problem-solving skills development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-header">
+                            <h3 class="game-title">GCC Blockchain Quest</h3>
+                            <p class="game-subtitle">Collaborative Regional Strategy</p>
+                        </div>
+                        <div class="game-body">
+                            <div class="game-feature">
+                                <h4>Regional Cooperation</h4>
+                                <p>Teams from each GCC country collaborate to build secure blockchain networks.</p>
+                            </div>
+                            <div class="game-feature">
+                                <h4>Educational Foundation</h4>
+                                <p>Teaches cybersecurity, economics, and strategic planning through engaging gameplay.</p>
+                            </div>
+                            <div class="game-feature">
+                                <h4>E-Sports Ready</h4>
+                                <p>Designed for competitive play and streaming integration with native tournament support.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Four Pillars Section -->
+        <section class="pillars-section section">
+            <div class="container">
+                <h2 class="section-title">The Four Pillars of Transformation</h2>
+                <p class="section-subtitle">Comprehensive development framework designed for holistic impact</p>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🧠</div>
+                        <h3 class="pillar-title">Emotional Intelligence</h3>
+                        <p class="pillar-description">Character-driven narratives that develop empathy, cultural understanding, and social skills through meaningful interactions and relationship-building scenarios.</p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon">💡</div>
+                        <h3 class="pillar-title">Financial Literacy</h3>
+                        <p class="pillar-description">Creator economy tools and virtual investment systems that teach economic principles, entrepreneurship, and wealth management from foundational concepts.</p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🔧</div>
+                        <h3 class="pillar-title">Technology Literacy</h3>
+                        <p class="pillar-description">AI collaboration tools and digital creation platforms that prepare youth for the future economy through hands-on technological experience and problem-solving.</p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🌍</div>
+                        <h3 class="pillar-title">Cultural Intelligence</h3>
+                        <p class="pillar-description">Heritage preservation and GCC unity initiatives that celebrate identity while fostering regional cooperation and global understanding through shared experiences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Showcase Section -->
+        <section class="platform-showcase section" id="platform">
+            <div class="container">
+                <div class="platform-content">
+                    <div class="platform-text">
+                        <h2>THEE OASIS Platform</h2>
+                        <p class="platform-description">A comprehensive digital ecosystem featuring 13 specialized portals, creator economy tools, educational gaming, and cultural preservation initiatives designed to empower GCC youth and preserve regional heritage.</p>
+                        
+                        <ul class="platform-features">
+                            <li>AI-driven personalized learning paths</li>
+                            <li>Virtual stock market for financial education</li>
+                            <li>Creator marketplace for digital and physical products</li>
+                            <li>Immersive cultural experiences and virtual tourism</li>
+                            <li>Blockchain-based certification and achievement system</li>
+                            <li>Multi-language support for global accessibility</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="platform-visual">
+                        Multi-Dimensional<br>Digital Ecosystem
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section class="characters-section section">
+            <div class="container">
+                <h2 class="section-title">Character Universe</h2>
+                <p class="section-subtitle">Meet the guardians and ambassadors of THEE OASIS virtual platform</p>
+                
+                <div class="characters-grid">
+                    <div class="character-card">
+                        <div class="character-header">
+                            <h3 class="character-name">Adnan</h3>
+                            <p class="character-role">Environmental Guardian (Kuwait)</p>
+                        </div>
+                        <div class="character-body">
+                            <div class="character-detail">
+                                <strong>Mission:</strong> Dedicated to sustainability and environmental protection, Adnan leads initiatives for clean energy solutions and wildlife conservation across the virtual platform.
+                            </div>
+                            <div class="character-detail">
+                                <strong>Expertise:</strong> Renewable energy systems, ecological balance, community mobilization
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <div class="character-header">
+                            <h3 class="character-name">Noura</h3>
+                            <p class="character-role">Sustainability Advocate (Kuwait)</p>
+                        </div>
+                        <div class="character-body">
+                            <div class="character-detail">
+                                <strong>Mission:</strong> Noura's passion for environmental stewardship drives her mission to educate users about sustainable living and renewable energy solutions.
+                            </div>
+                            <div class="character-detail">
+                                <strong>Expertise:</strong> Environmental education, sustainable design, community engagement
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <div class="character-header">
+                            <h3 class="character-name">Faris</h3>
+                            <p class="character-role">Clean Energy Knight (Saudi Arabia)</p>
+                        </div>
+                        <div class="character-body">
+                            <div class="character-detail">
+                                <strong>Mission:</strong> As the guardian of green technology, Faris champions Saudi Arabia's renewable energy initiatives and environmental protection efforts.
+                            </div>
+                            <div class="character-detail">
+                                <strong>Expertise:</strong> Solar technology, waste management, environmental policy
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="character-card">
+                        <div class="character-header">
+                            <h3 class="character-name">Jude</h3>
+                            <p class="character-role">Digital Tourism Ambassador (Saudi Arabia)</p>
+                        </div>
+                        <div class="character-body">
+                            <div class="character-detail">
+                                <strong>Mission:</strong> Embodying Saudi hospitality, Jude welcomes visitors to explore the Kingdom's rich culture and heritage through innovative digital tourism experiences.
+                            </div>
+                            <div class="character-detail">
+                                <strong>Expertise:</strong> Cultural heritage, hospitality management, digital storytelling
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Hub Section -->
+        <section class="innovation-hub section">
+            <div class="container">
+                <div class="innovation-content">
+                    <h2 class="innovation-title">NEOM Media Village Innovation Hub</h2>
+                    
+                    <div class="innovation-features">
+                        <div class="innovation-feature">
+                            <h4>State-of-the-Art Production Facilities</h4>
+                            <p>Professional motion capture stages, recording studios, and collaborative workspaces designed for content creation at scale.</p>
+                        </div>
+                        
+                        <div class="innovation-feature">
+                            <h4>Strategic Location</h4>
+                            <p>Positioned within NEOM's media district with access to global talent networks and production infrastructure.</p>
+                        </div>
+                        
+                        <div class="innovation-feature">
+                            <h4>Technology Integration</h4>
+                            <p>Seamless connectivity with cloud rendering farms, AI processing units, and real-time collaboration tools.</p>
+                        </div>
+                        
+                        <div class="innovation-feature">
+                            <h4>Talent Development</h4>
+                            <p>Direct access to training programs, industry experts, and partnership opportunities with global studios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section section">
+            <div class="container">
+                <h2 class="section-title">Measurable Impact</h2>
+                <p class="section-subtitle">Quantifiable results designed to accelerate Vision 2030 objectives</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Direct Jobs Created</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">5,000+</span>
+                        <span class="stat-label">Indirect Economic Opportunities</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Youth Reached Annually</span>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">$100M+</span>
+                        <span class="stat-label">Economic Impact Potential</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Section -->
+        <section class="partnership-section section" id="partnership">
+            <div class="container">
+                <h2 class="section-title">Strategic Partnership Model</h2>
+                <p class="section-subtitle">A collaborative framework designed for mutual growth and accelerated execution</p>
+                
+                <div class="partnership-content">
+                    <p>We propose a joint venture structure that leverages the strengths of each partner while creating sustainable value for all stakeholders. Our model is built on transparency, shared vision, and measurable outcomes.</p>
+                    
+                    <div class="partnership-highlight">
+                        <h3>Exclusive Opportunity: Saudi Vision Portal</h3>
+                        <p>50/50 partnership in the flagship digital portal showcasing Saudi innovation to the world, with revenue sharing from virtual real estate, tourism bookings, and premium content.</p>
+                        
+                        <div class="partnership-benefits">
+                            <div class="benefit-item">Full naming rights and branding authority</div>
+                            <div class="benefit-item">Co-management structure with equal decision-making</div>
+                            <div class="benefit-item">10-year renewable term with expansion options</div>
+                            <div class="benefit-item">Direct integration with existing initiatives</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section section" id="contact">
+            <div class="container">
+                <h2 class="contact-title">Ready to Build the Future Together?</h2>
+                <p class="contact-description">Let's discuss how THEE OASIS can accelerate your strategic objectives and create unprecedented value for the Kingdom.</p>
+                
+                <a href="https://wa.me/96551179990?text=Hello!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20strategic%20partnership." class="contact-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Start Conversation on WhatsApp
+                </a>
+                
+                <p style="opacity: 0.8; margin-top: 1rem;">Preferred contact method for immediate response</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">Cohesion Holdings</div>
+                <p class="footer-text">Strategic Innovation Architecture for Vision 2030 and Beyond</p>
+                <div class="footer-copyright">
+                    © 2025 Cohesion Holdings. All rights reserved. Confidential & Proprietary.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Password protection
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = 'oasis2023';
+            
+            if (password === correctPassword) {
+                document.getElementById('passwordScreen').classList.add('hide');
+                document.getElementById('mainContent').classList.add('show');
+                // Prevent back button from showing password screen
+                window.history.replaceState(null, null, window.location.href);
+            } else {
+                alert('Incorrect password. Please try again.');
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = document.getElementById('navbar').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus on password input when page loads
+            document.getElementById('passwordInput').focus();
+        });
+    </script>
+</body>
+</html>
